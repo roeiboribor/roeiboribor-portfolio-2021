@@ -13,13 +13,21 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {{-- Box Icons --}}
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    {{-- Animate.css --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/darkmode.js') }}" defer></script>
 </head>
 
-<body id="app" class="font-sans text-gray-900 antialiased">
+<body class="font-sans text-gray-900 antialiased">
+    <x-toggle-darkmode />
     {{ $slot }}
+
+    {{ $scripts ?? '' }}
 </body>
 
 </html>

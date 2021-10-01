@@ -46,4 +46,8 @@
             </div>
         </form>
     </x-auth-card>
+
+    <x-slot name="scripts">
+
+    </x-slot>
 </x-guest-layout>
