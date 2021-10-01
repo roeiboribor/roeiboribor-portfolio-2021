@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name') }}</title>
-</head>
-
-<body>
-    <h1>Home Page</h1>
-    <a href="{{ route('test') }}">Test</a>
-</body>
-
-</html>
+<x-guest-layout>
+    <h1>Home</h1>
+    <div class="flex space-x-4 text-white">
+        <a href="{{ route('register') }}" class="rounded px-8 py-2 bg-blue-500">Register</a>
+        <a href="{{ route('login') }}" class="rounded px-8 py-2 bg-green-500">Login</a>
+        <a href="{{ route('dashboard') }}" class="rounded px-8 py-2 bg-yellow-500">Dashboard</a>
+    </div>
+</x-guest-layout>
