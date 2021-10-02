@@ -23,8 +23,7 @@
     <script src="{{ asset('js/darkmode.js') }}" defer></script>
 </head>
 
-<body class="font-sans text-gray-900 antialiased">
-    <x-toggle-darkmode />
+<body class="font-sans antialiased">
     {{ $slot }}
 
     {{ $scripts ?? '' }}

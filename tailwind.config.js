@@ -6,11 +6,49 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
+    darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+            animation: {
+                tilt: 'tilt 5s infinite linear',
+                "slide-in-right": 'slide-in-right 0.7s both',
+                "fade-out-right": 'fade-out-right 0.7s both',
+            },
+            keyframes: {
+                tilt: {
+                    "0%, 50%, 100%": {
+                        transform: "rotate(0deg)",
+                    },
+                    "25%": {
+                        transform: "rotate(1deg)",
+                    },
+                    "75%": {
+                        transform: "rotate(-1deg)",
+                    }
+                },
+                "slide-in-right": {
+                    "0%": {
+                        transform: "translateX(1000px)",
+                        opacity: "0"
+                    },
+                    "100%": {
+                        transform: "translateX(0)",
+                        opacity: "1",
+                    }
+                },
+                "fade-out-right": {
+                    "0%": {
+                        transform: "translateX(0)",
+                        opacity: "1"
+                    },
+                    "100%": {
+                        transform: "translateX(50px)",
+                        opacity: "0"
+                    }
+                }
             },
             colors: {
                 'smalt': {
@@ -29,18 +67,39 @@ module.exports = {
             }
         },
     },
-
-    darkMode: 'class',
-
     variants: {
         extend: {
-            opacity: ['disabled'],
+            opacity: ['disabled', 'dark'],
             scale: ['active'],
             backgroundColor: ['checked'],
             translate: ['dark'],
             position: ['dark'],
+            filter: ['dark'],
+            blur: ['dark'],
+            backgroundImage: ['dark'],
+            animation: ['dark'],
+            width: ['group-hover'],
         },
     },
+    plugins: [
+        require('@tailwindcss/forms'),
+        function ({ addBase, theme }) {
+            function extractColorVars(colorObj, colorGroup = '') {
+                return Object.keys(colorObj).reduce((vars, colorKey) => {
+                    const value = colorObj[colorKey];
 
-    plugins: [require('@tailwindcss/forms')],
+                    const newVars =
+                        typeof value === 'string'
+                            ? { [`--color${colorGroup}-${colorKey}`]: value }
+                            : extractColorVars(value, `-${colorKey}`);
+
+                    return { ...vars, ...newVars };
+                }, {});
+            }
+
+            addBase({
+                ':root': extractColorVars(theme('colors')),
+            });
+        },
+    ],
 };
