@@ -8,7 +8,17 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $sections = [
+            'about',
+            'projects',
+            'services',
+            // 'blogs',
+            // 'contact',
+        ];
+        
+        return view('home',[
+            'sections' => $sections,
+        ]);
     }
 
     public function dashboard()

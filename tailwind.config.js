@@ -77,7 +77,7 @@ module.exports = {
             filter: ['dark'],
             blur: ['dark'],
             backgroundImage: ['dark'],
-            animation: ['dark'],
+            animation: ['dark', 'motion-safe', 'motion-reduce'],
             width: ['group-hover'],
         },
     },

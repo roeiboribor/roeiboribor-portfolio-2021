@@ -6,6 +6,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.card {
+    @apply rounded-lg bg-white dark:bg-smalt-900 h-full w-full;
+}
+
 .bg-gradient-01 {
     @apply bg-gradient-to-r from-purple-500 via-green-300 to-blue-400;
 }
@@ -23,7 +27,7 @@ html {
 }
 
 .banner {
-    @apply w-11/12 left-1/2 rounded-b-3xl transform -translate-x-1/2 bg-center bg-no-repeat bg-cover;
+    @apply lg:w-11/12 w-full left-1/2 rounded-b-3xl transform -translate-x-1/2 bg-center bg-no-repeat bg-cover;
     height: 70vh;
 }
 
@@ -32,7 +36,7 @@ html {
 }
 
 .line-dotted {
-    @apply border-b-2 border-dotted;
+    @apply border-b-2 border-smalt-600 dark:border-gray-200 border-dotted;
 }
 
 .badge {
@@ -53,4 +57,41 @@ html {
 
 .nav-list .line {
     @apply absolute bottom-0 inset-x-0 w-0 transition-all duration-300 ease-in-out rounded bg-smalt-100 h-1;
+}
+
+.chevron {
+    @apply left-1/2 absolute transform scale-50 -translate-x-1/2 opacity-0;
+    top: -10%;
+    animation: move-chevron 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move-chevron 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move-chevron 3s ease-out 2s infinite;
+}
+
+.text-scroll {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+}
+
+@keyframes move-chevron {
+    25% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 1;
+        transform: translate(-50%, calc(0.6rem * 3.8));
+    }
+    66.6% {
+        opacity: 1;
+        transform: translate(-50%, calc(0.6rem * 5.2));
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, calc(0.6rem * 8)) scale(1);
+    }
 }
