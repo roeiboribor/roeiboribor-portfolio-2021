@@ -34,7 +34,11 @@
         </header>
 
         {{-- Sidebar --}}
-
+        <div class="fixed top-2 right-2 z-50">
+            <button id="btnTest" class="bg-smalt-100 px-4 py-2 rounded transform active:scale-95">
+                Test
+            </button>
+        </div>
 
         {{-- Main --}}
         <main>

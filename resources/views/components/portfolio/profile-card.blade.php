@@ -1,5 +1,5 @@
-<div class="profile-card shadow-lg sticky">
-    <div class="card relative px-4 pt-8 h-full w-full z-10">
+<div class="profile-card shadow-lg sticky transform transition-all duration-300">
+    <div class="card relative px-4 pt-8 pb-8 h-full w-full z-10">
         <div class="card-header text-center mb-8">
             <img class="mx-auto mb-3 h-30 filter drop-shadow-lg bg-gradient-01 border-4 border-white rounded-full"
                 src="{{ asset('assets/img/portfolio/avatar.png') }}" alt="facebook avatar">

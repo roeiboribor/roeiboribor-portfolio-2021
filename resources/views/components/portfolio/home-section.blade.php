@@ -15,8 +15,8 @@
     Personal Realm!
 </h1>
 <div class="cards-container">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="relative">
+    <div class="grid grid-col-4 md:grid-cols-3 gap-8 text-center">
+        <div class="relative col-span-3 md:col-span-1">
             <div class="relative card shadow-lg p-8 z-10">
                 <div class="flex items-center justify-center">
                     <h2 class="text-5xl font-bold">2</h2>
@@ -29,7 +29,7 @@
                 class="absolute -inset-1 dark:filter dark:bg-gradient-to-r dark:from-purple-500 dark:via-green-300 dark:to-blue-400 dark:blur dark:opacity-75 z-0 motion-safe:animate-pulse">
             </div>
         </div>
-        <div class="relative">
+        <div class="relative col-span-3 md:col-span-1">
             <div class="relative card shadow-lg p-8 z-10">
                 <div class="flex items-center justify-center">
                     <h2 class="text-5xl font-bold">1</h2>
@@ -42,7 +42,7 @@
                 class="absolute -inset-1 dark:filter dark:bg-gradient-to-r dark:from-purple-500 dark:via-green-300 dark:to-blue-400 dark:blur dark:opacity-75 z-0 motion-safe:animate-pulse">
             </div>
         </div>
-        <div class="relative">
+        <div class="relative col-span-3 md:col-span-1">
             <div class="relative card shadow-lg p-8 z-10">
                 <div class="flex items-center justify-center">
                     <h2 class="text-5xl font-bold">3</h2>
