@@ -34,11 +34,6 @@
         </header>
 
         {{-- Sidebar --}}
-        <div class="fixed top-2 right-2 z-50">
-            <button id="btnTest" class="bg-smalt-100 px-4 py-2 rounded transform active:scale-95">
-                Test
-            </button>
-        </div>
 
         {{-- Main --}}
         <main>
@@ -77,6 +72,25 @@
     </div>
     <x-slot name="scripts">
         <script>
+            $(document).ready(function(){
+                var owl = $('.owl-carousel');
+
+                owl.owlCarousel({
+                    loop:true,
+                    items: 2,
+                    center: true,
+                    margin:10,
+                });
+
+                owl.on('mousewheel', '.owl-stage', function (e) {
+                    if (e.deltaY>0) {
+                        owl.trigger('next.owl');
+                    } else {
+                        owl.trigger('prev.owl');
+                    }
+                    e.preventDefault();
+                });
+            });
             const header = document.querySelector('header');
             const main = document.querySelector('main');
             const profileCard = document.querySelector('.profile-card');
