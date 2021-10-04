@@ -10,7 +10,7 @@
                 </div>
                 <x-portfolio.navbar>
                     <div class="flex">
-                        <a href="#" class="flex items-center py-2 md:py-4">
+                        <a href="{{ route('login') }}" class="flex items-center py-2 md:py-4">
                             <img src="{{ asset('assets/img/portfolio/logo.png') }}" alt="Logo" class="h-8 w-8 mr-2">
                             <span class="font-bold text-2xl hidden md:block">
                                 My<span class="text-smalt-100">Portfolio</span>
@@ -41,7 +41,7 @@
                 class="banner absolute shadow-lg z-10">
                 <div class="overlay dark:bg-opacity-30 bg-opacity-40 bg-black rounded-3xl"></div>
             </div>
-            <div class="relative container grid grid-cols-12 z-30">
+            <div class="relative container grid grid-cols-12 z-30 pb-16">
                 <div class="col-span-4 hidden lg:block pt-40 pr-4">
                     <x-portfolio.profile-card />
                 </div>
@@ -66,7 +66,22 @@
         </main>
 
         {{-- Footer --}}
-
+        <footer class="pt-8 overflow-hidden">
+            <div class="rounded-t-lg relative">
+                <div class="relative z-10 shadow-lg bg-white dark:bg-smalt-900 px-4 py-8">
+                    <div class="container">
+                        <p class="text-center">
+                            <small>
+                                © Copyright 2021, Roei Boribor
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="absolute -inset-x-0 -top-1 bottom-0 dark:filter dark:bg-gradient-to-r dark:from-purple-500 dark:via-green-300 dark:to-blue-400 dark:blur dark:opacity-75 z-0 animate-tilt">
+                </div>
+            </div>
+        </footer>
         {{-- Modals --}}
 
     </div>

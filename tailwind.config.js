@@ -79,6 +79,7 @@ module.exports = {
             backgroundImage: ['dark'],
             animation: ['dark', 'motion-safe', 'motion-reduce'],
             width: ['group-hover'],
+            rotate: ['group-hover'],
         },
     },
     plugins: [
