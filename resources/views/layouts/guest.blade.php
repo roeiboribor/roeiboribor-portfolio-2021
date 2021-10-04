@@ -23,20 +23,21 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/darkmode.js') }}" defer></script>
-    <style>
-    </style>
 </head>
 
 <body class="font-sans antialiased">
+
     {{ $slot }}
 
     {{-- jQuery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     {{-- Owl Carousel --}}
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/jquery.mousewheel.min.js') }}"></script>
+
     {{ $scripts ?? '' }}
 </body>
 

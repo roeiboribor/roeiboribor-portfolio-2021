@@ -82,6 +82,7 @@
                 </div>
             </div>
         </footer>
+
         {{-- Modals --}}
 
     </div>
