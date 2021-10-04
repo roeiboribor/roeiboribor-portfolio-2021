@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div x-data="{ open: false }"
+    <div id="#portfolio" x-data="{ open: false }"
         class="relative min-h-screen text-smalt-900 dark:text-gray-100 transition-colors duration-300 bg-gray-200 dark:bg-smalt-900">
 
         {{-- Navigation --}}
@@ -77,9 +77,19 @@
 
                 owl.owlCarousel({
                     loop:true,
-                    items: 2,
                     center: true,
                     margin:10,
+                    responsive:{
+                        0:{
+                        items:1,
+                        },
+                        600:{
+                        items:2,
+                        },
+                        1024:{
+                        items:3,
+                        },
+                    }
                 });
 
                 owl.on('mousewheel', '.owl-stage', function (e) {
@@ -91,9 +101,12 @@
                     e.preventDefault();
                 });
             });
+
             const header = document.querySelector('header');
             const main = document.querySelector('main');
             const profileCard = document.querySelector('.profile-card');
+            const projectorDesc = document.querySelector('.projector .description');
+            const btnReadmore = document.querySelector('.projector #btnReadmore');
 
             const navitems = document.querySelectorAll('.nav-list .navitem');
             const badges = document.querySelectorAll('.badge');
@@ -110,6 +123,20 @@
                     navitem.classList.add('active');
                 })
             });
+
+            btnReadmore.addEventListener('click', (e) => {
+                toggleExpand(projectorDesc);
+                if(e.target.innerText == "Read More...") {
+                    e.target.innerText = `Read Less...`;
+                } else {
+                    e.target.innerText = `Read More...`;
+                }
+                
+            });
+
+            function toggleExpand(element) {
+                element.classList.toggle('line-clamp-3');
+            }
 
             function removeActiveClass(elements) {
                 elements.forEach(element => {

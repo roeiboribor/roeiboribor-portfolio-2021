@@ -6,6 +6,37 @@ html {
     scroll-behavior: smooth;
 }
 
+/* START OWL-CAROUSEL THEME */
+.owl-theme .owl-dots,
+.owl-theme .owl-nav {
+    @apply text-center;
+}
+.owl-theme .owl-nav .disabled {
+    @apply opacity-50 cursor-default;
+}
+.owl-theme .owl-dots {
+    @apply mt-3;
+}
+.owl-theme .owl-dots .owl-dot {
+    @apply inline-block;
+    zoom: 1;
+}
+.owl-theme .owl-item.center h3 {
+    @apply transition duration-500 text-3xl;
+}
+.owl-theme .owl-item.center .owl-details {
+    @apply transition duration-500 opacity-100;
+}
+.owl-theme .owl-dots .owl-dot span {
+    @apply w-2 h-2 my-1 mx-1 bg-gray-500 block transition duration-300 rounded-3xl;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    @apply bg-gray-50;
+}
+/* END OWL-CAROUSEL THEME */
+
+/* START PORTFOLIO THEME */
 .card {
     @apply rounded-lg bg-white dark:bg-smalt-900 h-full w-full;
 }
@@ -95,3 +126,5 @@ html {
         transform: translate(-50%, calc(0.6rem * 8)) scale(1);
     }
 }
+
+/* END PORTFOLIO THEME */
