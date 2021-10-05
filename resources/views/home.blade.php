@@ -34,6 +34,19 @@
         </header>
 
         {{-- Sidebar --}}
+        <div id="mobileMenu" @click="open = !open"
+            class="fixed mobile-menu md:hidden inset-0 transform transition duration-200 ease-in-out z-50"
+            :class="{'': open, '-translate-x-full': !open }">
+            <div class="absolute overlay bg-black opacity-50"></div>
+            <div class="absolute inset-y-0 w-64">
+                <div class="relative inset-0 h-full w-full bg-white dark:bg-smalt-800 z-10">
+                    <ul class="space-y-8 nav-list items-center px-4 text-center pt-16">
+                        <x-portfolio.nav-items :sections="$sections" />
+                    </ul>
+                </div>
+                <x-gradient-light class="inset-y-0 left-0 -right-1 animate-tilt" />
+            </div>
+        </div>
 
         {{-- Main --}}
         <main>
@@ -77,9 +90,7 @@
                         </p>
                     </div>
                 </div>
-                <div
-                    class="absolute -inset-x-0 -top-1 bottom-0 dark:filter dark:bg-gradient-to-r dark:from-purple-500 dark:via-green-300 dark:to-blue-400 dark:blur dark:opacity-75 z-0 animate-tilt">
-                </div>
+                <x-gradient-light class="-inset-x-0 -top-1 bottom-0 animate-tilt" />
             </div>
         </footer>
 

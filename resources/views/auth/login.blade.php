@@ -38,9 +38,10 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm hover:text-gray-500" href="{{ route('register') }}">
-                    {{ __('No account yet?') }}
+            <div class="flex items-center justify-between mt-4">
+                <a class="text-sm text-smalt-500 dark:text-gray-500 hover:opacity-70 flex items-center"
+                    href="{{ route('home') }}">
+                    <i class='bx bx-left-arrow-alt text-md mr-2'></i>{{ __('go back???') }}
                 </a>
 
                 <x-button class="ml-3 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400">
