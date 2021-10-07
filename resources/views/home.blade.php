@@ -153,10 +153,10 @@
 
             btnReadmore.addEventListener('click', (e) => {
                 toggleExpand(projectorDesc);
-                if(e.target.innerText == "Read More...") {
-                    e.target.innerText = `Read Less...`;
+                if(e.target.innerText == "See More...") {
+                    e.target.innerText = `See Less...`;
                 } else {
-                    e.target.innerText = `Read More...`;
+                    e.target.innerText = `See More...`;
                 }
                 
             });

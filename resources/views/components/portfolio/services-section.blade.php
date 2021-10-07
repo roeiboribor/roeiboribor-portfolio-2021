@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-16 mt-8">
-    <div class="order-1 cursor-pointer relative">
-        <img class="bg-white dark:bg-smalt-900 rounded-xl relative z-10" src="{{ asset('assets/svg/programming.svg') }}"
-            alt="programming svg">
+    <div class="order-1 relative">
+        <img class="bg-white dark:bg-smalt-900 rounded-xl relative z-10 shadow-lg"
+            src="{{ asset('assets/svg/programming.svg') }}" alt="programming svg">
         <div
             class="absolute -inset-1 dark:filter dark:bg-gradient-to-r dark:from-purple-500 dark:via-green-300 dark:to-blue-400 dark:blur dark:opacity-75 z-0 dark:animate-pulse">
         </div>
@@ -22,6 +22,9 @@
             </li>
             <li>
                 Web Applications
+            </li>
+            <li>
+                Spreadsheet to MySql
             </li>
         </ul>
     </div>
@@ -50,11 +53,17 @@
             <li class="col-span-1">
                 Magnets
             </li>
+            <li class="col-span-1">
+                Mouse pads
+            </li>
+            <li class="col-span-1">
+                Rubber Coaster
+            </li>
         </ul>
     </div>
-    <div class="relative order-1 md:order-2 cursor-pointer">
-        <img class="bg-white dark:bg-smalt-900 rounded-xl relative z-10" src="{{ asset('assets/svg/marketing.svg') }}"
-            alt="marketing svg">
+    <div class="relative order-1 md:order-2">
+        <img class="bg-white dark:bg-smalt-900 rounded-xl relative z-10 shadow-lg"
+            src="{{ asset('assets/svg/marketing.svg') }}" alt="marketing svg">
         <div
             class="absolute -inset-1 dark:filter dark:bg-gradient-to-r dark:from-purple-500 dark:via-green-300 dark:to-blue-400 dark:blur dark:opacity-75 z-0 dark:animate-pulse">
         </div>

@@ -21,12 +21,6 @@ html {
     @apply inline-block;
     zoom: 1;
 }
-.owl-theme .owl-item.center h3 {
-    @apply transition duration-500 text-3xl;
-}
-.owl-theme .owl-item.center .owl-details {
-    @apply transition duration-500 opacity-100;
-}
 .owl-theme .owl-dots .owl-dot span {
     @apply w-2 h-2 my-1 mx-1 bg-gray-500 block transition duration-300 rounded-3xl;
 }
