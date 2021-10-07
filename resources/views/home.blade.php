@@ -98,7 +98,7 @@
 
     </div>
     <x-slot name="scripts">
-        <script>
+        <script defer>
             $(document).ready(function(){
                 var owl = $('.owl-carousel');
 
