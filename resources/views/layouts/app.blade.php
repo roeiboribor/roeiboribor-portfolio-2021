@@ -13,27 +13,34 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {{-- Box Icons --}}
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/darkmode.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
-    <div id="app" class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+    <div id="app" class="min-h-screen text-smalt-900 dark:text-gray-100 bg-gray-100 dark:bg-smalt-900">
+        <x-dashboard.navigation />
 
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+        <div class="dashboard-wrapper relative">
+            <aside id="sidebar" style="width: 240px;" :class="{'-translate-x-full': ! menu, '': menu }"
+                class="sidebar transition duration-300 ease-in-out absolute inset-y-0 transform">
+                <div class="h-full bg-white dark:bg-smalt-900">
+                    <h1>Side Bar</h1>
+                </div>
+            </aside>
+        </div>
     </div>
+
+    <script defer>
+        const nav = document.querySelector('nav');
+        const dashboardWrapper = document.querySelector('.dashboard-wrapper');
+
+        dashboardWrapper.style.height = `calc(100vh - ${nav.clientHeight}px)`;
+    </script>
 </body>
 
 </html>
