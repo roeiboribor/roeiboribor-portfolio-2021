@@ -6,6 +6,20 @@ html {
     scroll-behavior: smooth;
 }
 
+/* START GLOBAL CLASS */
+.container {
+    @apply max-w-7xl mx-auto;
+}
+
+.blank-space {
+    @apply h-80 border-2 flex items-center justify-center max-w-7xl mx-auto;
+}
+
+.overlay {
+    @apply absolute inset-0 w-full h-full;
+}
+/* END GLOBAL CLASS */
+
 /* START OWL-CAROUSEL THEME */
 .owl-theme .owl-dots,
 .owl-theme .owl-nav {
@@ -37,18 +51,6 @@ html {
 
 .bg-gradient-01 {
     @apply bg-gradient-to-r from-purple-500 via-green-300 to-blue-400;
-}
-
-.container {
-    @apply max-w-7xl mx-auto;
-}
-
-.blank-space {
-    @apply h-80 border-2 flex items-center justify-center max-w-7xl mx-auto;
-}
-
-.overlay {
-    @apply absolute inset-0 w-full h-full;
 }
 
 .banner {
@@ -121,6 +123,3 @@ html {
     }
 }
 /* END PORTFOLIO THEME */
-
-/* START DASHBOARD */
-/* END DASHBOARD */

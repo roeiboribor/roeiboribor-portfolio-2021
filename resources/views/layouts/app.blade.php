@@ -23,24 +23,18 @@
 
 <body class="font-sans antialiased">
     <div id="app" class="min-h-screen text-smalt-900 dark:text-gray-100 bg-gray-100 dark:bg-smalt-900">
-        <x-dashboard.navigation />
+        <aside class="sidebar fixed">
 
-        <div class="dashboard-wrapper relative">
-            <aside id="sidebar" style="width: 240px;" :class="{'-translate-x-full': ! menu, '': menu }"
-                class="sidebar transition duration-300 ease-in-out absolute inset-y-0 transform">
-                <div class="h-full bg-white dark:bg-smalt-900">
-                    <h1>Side Bar</h1>
+        </aside>
+        <div>
+            <nav>Navigation</nav>
+            <main class="flex items-center justify-center">
+                <div class="text-center mx-auto">
+                    This is a content
                 </div>
-            </aside>
+            </main>
         </div>
     </div>
-
-    <script defer>
-        const nav = document.querySelector('nav');
-        const dashboardWrapper = document.querySelector('.dashboard-wrapper');
-
-        dashboardWrapper.style.height = `calc(100vh - ${nav.clientHeight}px)`;
-    </script>
 </body>
 
 </html>
