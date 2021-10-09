@@ -24,34 +24,38 @@
 
 <body class="font-sans antialiased">
     <div id="app" x-data="{open: true}"
-        class="relative min-h-screen text-smalt-900 dark:text-gray-100 bg-gray-200 dark:bg-smalt-900 z-0 transition-all duration-300">
-        <div :class="{'w-60': open,'w-20': ! open}"
-            class="sidebar fixed top-0 w-60 h-full left-0 bg-white dark:bg-smalt-900 px-4 transition-all">
-            <div class="w-full h-full">
-                <h1 class="text-center">Sidebar</h1>
+        class="relative min-h-screen text-smalt-900 dark:text-gray-100 bg-gray-200 dark:bg-smalt-600 z-0 transition-all duration-300">
+        <div :class="{'w-60': open,'w-20': ! open}" class="sidebar fixed top-0 w-60 h-full left-0 transition-all">
+            <div class="relative w-full h-full z-50">
+                <a href="{{ route('home') }}" class="h-14 w-full flex items-center whitespace-nowrap">
+                    <img src="{{ asset('assets/img/portfolio/logo.png') }}" alt="Logo" class="h-8 w-8">
+                    <span class="font-bold text-2xl">
+                        My Portfolio
+                    </span>
+                </a>
             </div>
         </div>
         <div :class="{'pl-60': open,'pl-20': ! open}" class="main-content pl-60 transition-all">
             <div class="relative min-h-screen">
-                <nav class="sticky left-0 top-0 py-2 flex items-center justify-between bg-white dark:bg-smalt-900">
-                    <x-hamburger-menu />
-                    <x-darkmode-toggle-button />
-                </nav>
-                <main class="shadow-inner">
+                <x-top-navbar />
+                <main>
+                    <div class="blank-space"></div>
                     <div class="blank-space">
                         <h1 class="text-center">Main</h1>
                     </div>
+                    <div class="blank-space"></div>
+                    <div class="blank-space"></div>
+                    <div class="blank-space"></div>
+                    <div class="blank-space"></div>
                 </main>
                 <footer class="relative overflow-hidden">
-                    <div class="rounded-t-lg relative">
-                        <div class="relative z-10 shadow-lg bg-white dark:bg-smalt-900 px-4 py-8">
-                            <div class="container">
-                                <p class="text-center">
-                                    <small>
-                                        © Copyright 2021, Roei Boribor
-                                    </small>
-                                </p>
-                            </div>
+                    <div class="relative z-10 shadow-lg bg-white dark:bg-smalt-900 px-4 py-8">
+                        <div class="container">
+                            <p class="text-center">
+                                <small>
+                                    © Copyright 2021, Roei Boribor
+                                </small>
+                            </p>
                         </div>
                     </div>
                 </footer>

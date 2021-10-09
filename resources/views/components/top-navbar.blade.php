@@ -1,15 +1,8 @@
-<nav class="top-navbar absolute inset-x-0">
-    <div class="relative flex items-center justify-between px-4 py-2 bg-white dark:bg-smalt-900 z-10">
+<nav class="top-navbar sticky top-0">
+    <div class="relative flex items-center justify-between pr-4 py-2 bg-white dark:bg-smalt-600">
         <div class="flex items-center">
-            {{-- Navbar Brand --}}
-            <a href="#" class="flex items-center">
-                <img src="{{ asset('assets/img/portfolio/logo.png') }}" alt="Logo" class="h-6 w-6 mr-2">
-                <span class="font-bold text-2xl hidden md:block transition-all duration-500 text-neongreen-glow">
-                    {{ __('My Portfolio') }}
-                </span>
-            </a>
             {{-- Toggle Menu --}}
-            <x-hamburger-menu class="ml-3" />
+            <x-hamburger-menu />
         </div>
         {{-- Settings Dropdown --}}
         <div class="flex items-center ml-6">
@@ -47,5 +40,4 @@
             </x-dropdown>
         </div>
     </div>
-    <x-gradient-light class="-inset-x-0 -top-1 bottom-0" />
 </nav>
