@@ -25,11 +25,12 @@
 <body class="font-sans antialiased">
     <div id="app" x-data="{open: true}"
         class="relative min-h-screen text-smalt-900 dark:text-gray-100 bg-gray-200 dark:bg-smalt-600 z-0 transition-all duration-300">
-        <div :class="{'w-60': open,'w-20': ! open}" class="sidebar fixed top-0 w-60 h-full left-0 transition-all">
+        <div :class="{'w-60': open,'w-20': ! open}"
+            class="sidebar shadow-lg fixed top-0 w-60 h-full bg-white dark:bg-smalt-700 left-0 transition-all">
             <div class="relative w-full h-full z-50">
                 <a href="{{ route('home') }}" class="h-14 w-full flex items-center whitespace-nowrap">
-                    <img src="{{ asset('assets/img/portfolio/logo.png') }}" alt="Logo" class="h-8 w-8">
-                    <span class="font-bold text-2xl">
+                    <img src="{{ asset('assets/img/portfolio/logo.png') }}" alt="Logo" class="h-12 w-12">
+                    <span class="font-bold text-2xl ml-3">
                         My Portfolio
                     </span>
                 </a>
@@ -49,7 +50,7 @@
                     <div class="blank-space"></div>
                 </main>
                 <footer class="relative overflow-hidden">
-                    <div class="relative z-10 shadow-lg bg-white dark:bg-smalt-900 px-4 py-8">
+                    <div class="relative z-10 shadow-lg bg-white dark:bg-smalt-700 px-4 py-8">
                         <div class="container">
                             <p class="text-center">
                                 <small>
