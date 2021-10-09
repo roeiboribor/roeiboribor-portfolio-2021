@@ -1,17 +1,21 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
+    <div x-data="{open: true}" class="overflow-hidden">
+        <aside class="fixed left-0 bg-white dark:bg-smalt-900 inset-y-0 w-64">
+            <div class="logo-details h-14 flex items-center">
+                <i class="bx bxl-c-plus-plus"></i>
+                <span class="logo_name">Codinglab</span>
             </div>
-        </div>
+        </aside>
+        <section class="relative h-screen left-64">
+            <nav class="flex items-center justify-between bg-white dark:bg-smalt-900">
+                <x-hamburger-menu />
+                <x-darkmode-toggle-button />
+            </nav>
+            <main class="flex items-center">
+
+            </main>
+            {{-- Navigation Bar --}}
+            {{-- Main Section --}}
+        </section>
     </div>
 </x-app-layout>
