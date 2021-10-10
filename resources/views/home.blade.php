@@ -35,7 +35,7 @@
 
         {{-- Sidebar --}}
         <div id="mobileMenu" @click="open = !open"
-            class="fixed mobile-menu md:hidden inset-0 transform transition duration-200 ease-in-out z-50"
+            class="fixed mobile-menu md:hidden inset-0 -translate-x-full transform transition duration-200 ease-in-out z-50"
             :class="{'': open, '-translate-x-full': !open }">
             <div class="absolute overlay bg-black opacity-50"></div>
             <div class="absolute inset-y-0 w-64">
