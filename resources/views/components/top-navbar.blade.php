@@ -1,5 +1,5 @@
-<nav class="top-navbar sticky top-0 shadow-lg">
-    <div class="relative flex items-center justify-between pr-4 py-2 bg-white dark:bg-smalt-700">
+<nav class="top-navbar sticky top-0 z-50">
+    <div class="relative flex items-center justify-between pr-4 py-2">
         <div class="flex items-center">
             {{-- Toggle Menu --}}
             <x-hamburger-menu />
