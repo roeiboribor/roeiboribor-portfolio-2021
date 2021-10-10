@@ -1,21 +1,36 @@
 <x-app-layout>
-    <div x-data="{open: true}" class="overflow-hidden">
-        <aside class="fixed left-0 bg-white dark:bg-smalt-900 inset-y-0 w-64">
-            <div class="logo-details h-14 flex items-center">
-                <i class="bx bxl-c-plus-plus"></i>
-                <span class="logo_name">Codinglab</span>
-            </div>
-        </aside>
-        <section class="relative h-screen left-64">
-            <nav class="flex items-center justify-between bg-white dark:bg-smalt-900">
-                <x-hamburger-menu />
-                <x-darkmode-toggle-button />
-            </nav>
-            <main class="flex items-center">
+    <div
+        class="sticky top-0 flex items-center bg-white text-gray-100 bg-opacity-10 backdrop-filter backdrop-blur-sm h-full w-full py-4">
+        <h1 class="text-3xl font-bold ml-3">Dashboard</h1>
 
-            </main>
-            {{-- Navigation Bar --}}
-            {{-- Main Section --}}
-        </section>
+        {{-- NOTE: BREADCRUMBS HIDDEN --}}
+        <div class="ml-16 hidden">
+            <ol class="flex flex-wrap space-x-1">
+                <li class="breadcrumb-item text-sm">
+                    <a href="#" class="text-smalt-50 font-semibold flex items-center">
+                        <span class="underline">Home</span>
+                        <i class='bx bx-chevron-right text-xl text-white ml-2'></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item text-sm">
+                    <a href="#" class="text-smalt-50 font-semibold flex items-center">
+                        <span class="underline">2nd Page</span>
+                        <i class='bx bx-chevron-right text-xl text-white ml-2'></i>
+                    </a>
+                </li>
+                <li class="breadcrumb-item active text-sm" aria-current="page">
+                    <span class="text-gray-200">3rd Page</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div>
+        <div class="blank-space"></div>
+        <div class="blank-space"></div>
+        <div class="blank-space"></div>
+        <div class="blank-space"></div>
+        <div class="blank-space"></div>
+        <div class="blank-space"></div>
+        <div class="blank-space"></div>
     </div>
 </x-app-layout>

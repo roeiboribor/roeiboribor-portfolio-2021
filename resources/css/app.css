@@ -15,6 +15,10 @@ html {
     @apply h-80 border-2 flex items-center justify-center max-w-7xl mx-auto;
 }
 
+.card-glass {
+    @apply bg-white text-white bg-opacity-10 backdrop-filter backdrop-blur-sm h-full w-full;
+}
+
 .overlay {
     @apply absolute inset-0 w-full h-full;
 }
