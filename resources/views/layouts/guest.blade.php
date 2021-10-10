@@ -23,6 +23,29 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/darkmode.js') }}" defer></script>
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 1rem;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #4082FB;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0E61FA;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased">
