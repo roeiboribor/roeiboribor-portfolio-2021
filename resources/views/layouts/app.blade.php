@@ -59,11 +59,17 @@
                 <x-dashboard.top-navbar />
 
                 {{-- MAIN CONTENT --}}
-                <main style="background-image: url('{{ asset('assets/img/trees.jpg') }}')"
-                    class="rounded-lg bg-white dark:bg-gray-800 shadow-inner relative bg-no-repeat bg-cover bg-center bg-fixed overflow-hidden">
+                <main style="background-image: url('{{ asset('assets/img/trees.jpg') }}')" class="rounded-lg bg-white dark:bg-gray-800 shadow-inner relative bg-no-repeat bg-cover bg-center
+                bg-fixed overflow-hidden">
                     <div class="overlay rounded-lg bg-black opacity-20 z-0"></div>
-                    <div class="relative z-10 rounded-lg">
-                        {{ $slot }}
+                    <div class="relative z-10 overflow-hidden">
+                        <header class="header flex items-center">
+                            {{ $header }}
+                        </header>
+
+                        <div class="px-4">
+                            {{ $slot }}
+                        </div>
                     </div>
                 </main>
 
@@ -73,6 +79,7 @@
         </div>
     </div>
 
+    <script src="{{ asset('js/anime.min.js') }}"></script>
     <script>
         const topNavbar = document.querySelector('nav.top-navbar');
         const main = document.querySelector('main');
