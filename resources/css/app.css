@@ -127,3 +127,57 @@ html {
     }
 }
 /* END PORTFOLIO THEME */
+.sidebar.close .nav-links {
+    @apply overflow-visible;
+}
+.sidebar .nav-links li {
+    @apply relative transition-all duration-500 ease-in-out hover:bg-gray-300 dark:hover:bg-gray-800 select-none;
+}
+.sidebar .nav-links li .icon-link {
+    @apply flex items-center justify-between;
+}
+.sidebar.close .nav-links li .icon-link {
+    @apply block;
+}
+.sidebar .nav-links li i {
+    @apply h-14 text-center place-items-center leading-loose cursor-pointer transition-all duration-300 ease-in-out;
+}
+.sidebar .nav-links li.showMenu i.arrow {
+    @apply transform -rotate-180;
+}
+.sidebar.close .nav-links li i.arrow {
+    @apply hidden;
+}
+.sidebar .nav-links li a .link_name {
+    @apply text-lg font-semibold;
+}
+.sidebar.close .nav-links li a .link_name {
+    @apply opacity-0 pointer-events-none;
+}
+.sidebar .nav-links li .sub-menu {
+    @apply pt-1 pr-1 pb-4 pl-20 -mt-3 bg-gray-300 dark:bg-gray-800 hidden;
+}
+.sidebar .nav-links li.showMenu .sub-menu {
+    @apply block;
+}
+.sidebar .nav-links li .sub-menu a {
+    @apply py-1 whitespace-nowrap opacity-60 transition-all duration-300 ease-in-out hover:opacity-100;
+}
+.sidebar.close .nav-links li .sub-menu {
+    @apply absolute left-full -top-3 mt-0 py-3 px-5 rounded-r-md opacity-0 block pointer-events-none transition-none;
+}
+.sidebar.close .nav-links li:hover .sub-menu {
+    @apply top-0 opacity-100 pointer-events-auto transition-all duration-500 ease-in-out;
+}
+.sidebar .nav-links li .sub-menu .link_name {
+    @apply hidden;
+}
+.sidebar.close .nav-links li .sub-menu .link_name {
+    @apply text-lg font-semibold opacity-100 block pointer-events-none;
+}
+.sidebar .nav-links li .sub-menu.blank {
+    @apply opacity-0 pointer-events-none pt-1 pr-5 pb-3 pl-4;
+}
+.sidebar .nav-links li:hover .sub-menu.blank {
+    @apply top-1/2 transform -translate-y-1/2;
+}

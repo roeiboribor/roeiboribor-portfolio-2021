@@ -23,6 +23,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
-        "@tailwindcss/line-clamp": "^0.2.2"
+        "@tailwindcss/line-clamp": "^0.2.2",
+        "tailwind-scrollbar-hide": "^1.0.3"
     }
 }

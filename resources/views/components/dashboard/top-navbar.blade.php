@@ -1,8 +1,8 @@
-<nav class="top-navbar sticky top-0 z-50 transition-colors bg-white dark:bg-gray-900">
+<nav class="top-navbar sticky top-0 z-50 bg-white dark:bg-gray-900">
     <div class="relative flex items-center justify-between pr-4 py-2">
         <div class="flex items-center">
             {{-- Toggle Menu --}}
-            <x-hamburger-menu />
+            <x-hamburger-menu id="hamburger" />
         </div>
         {{-- Settings Dropdown --}}
         <div class="flex items-center ml-6">
@@ -10,9 +10,8 @@
                 <x-slot name="trigger">
                     <div class="flex space-x-4">
                         <x-darkmode-toggle-button />
-                        <button
-                            class="flex items-center text-sm font-medium focus:outline-none transition duration-150 ease-in-out">
-                            <div>{{ Auth::user()->first_name }}</div>
+                        <button class="flex items-center text-sm font-medium focus:outline-none">
+                            <div>{{ Auth::user()->first_name.' '.Auth::user()->last_name }}</div>
 
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"

@@ -20,6 +20,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/darkmode.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/sidebar.js') }}" defer></script> --}}
     <style>
         /* width */
         ::-webkit-scrollbar {
@@ -46,14 +47,14 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div id="app" x-data="{open: false}"
-        class="relative min-h-screen transition-colors duration-300 text-smalt-900 dark:text-gray-100 bg-white dark:bg-gray-900 z-0">
+    <div id="app" x-data="{open: checkSidebar()}"
+        class="relative min-h-screen text-smalt-900 dark:text-gray-100 bg-white dark:bg-gray-900 z-0">
 
         {{-- SIDEBAR --}}
         <x-dashboard.sidebar />
 
         {{-- RIGHT CONTAINER --}}
-        <div :class="{'pl-60': open,'pl-20': ! open}" class="pl-20 transition-all duration-300">
+        <div :class="{'pl-60': open,'pl-20': ! open}" class="main-content pl-20 transition-all duration-300">
             <div class="relative min-h-screen pr-4">
                 {{-- TOP NAVIGATION BAR --}}
                 <x-dashboard.top-navbar />
@@ -91,6 +92,41 @@
             const topNavbarHeight = topNavbar.clientHeight;
             const footerHeight = footer.clientHeight;
             return topNavbarHeight + footerHeight;
+        }
+
+        // Dashboard Sidebar dropdown Arrw
+        let arrows = document.querySelectorAll('.arrow');
+
+        arrows.forEach((arrow) => {
+            arrow.addEventListener('click', () => {
+                let arrowParent = arrow.parentElement.parentElement;
+                arrowParent.classList.toggle('showMenu');
+            });
+        });
+
+        let isSidebar = localStorage.getItem('sidebar');
+        const hamburger = document.querySelector('#hamburger');
+
+        hamburger.addEventListener('click', () => toggleSidebar())
+
+        const checkSidebar = () => {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            
+            if (isSidebar === 'true') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        const toggleSidebar = () => {
+            isSidebar = localStorage.getItem('sidebar');
+            if (isSidebar !== 'true') {
+                localStorage.setItem('sidebar', 'true');
+            } else {
+                localStorage.setItem('sidebar', 'false');
+            }
         }
     </script>
 </body>
