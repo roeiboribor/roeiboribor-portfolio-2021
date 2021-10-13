@@ -20,6 +20,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/test', [PageController::class, 'test'])->name('test');
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::get('/projects', [PageController::class, 'projects'])->name('projects');
+    Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs');
+    Route::get('/settings', [PageController::class, 'settings'])->name('settings');
 });
 
 require __DIR__.'/auth.php';

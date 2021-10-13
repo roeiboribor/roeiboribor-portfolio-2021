@@ -3,7 +3,7 @@
     <x-slot name="header">
         <div
             class="pl-5 pr-10 py-2 text-gray-100 bg-gradient-to-r from-green-400 to-blue-500 rounded-r-full animate__animated animate__fadeInLeft">
-            <h1 class="text-3xl font-bold">Dashboard</h1>
+            <h1 class="text-3xl font-bold">Settings</h1>
         </div>
     </x-slot>
 

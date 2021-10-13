@@ -25,7 +25,8 @@
                     <a href="#delete">Delete</a>
                 </li>
             </x-dashboard.list-item-dropdown>
-            <x-dashboard.list-item-dropdown :href="route('home')" :icon="__('bx bxl-blogger')" :title="__('Blogs')">
+            <x-dashboard.list-item-dropdown :href="route('blogs')" :icon="__('bx bxl-blogger')" :title="__('Blogs')"
+                :active="request()->routeIs('blogs')">
                 <li>
                     <a href="#create">Create</a>
                 </li>
@@ -36,7 +37,8 @@
                     <a href="#delete">Delete</a>
                 </li>
             </x-dashboard.list-item-dropdown>
-            <x-dashboard.list-item :href="route('home')" :icon="__('bx bx-cog')" :title="__('Settings')" />
+            <x-dashboard.list-item :href="route('settings')" :icon="__('bx bx-cog')" :title="__('Settings')"
+                :active="request()->routeIs('settings')" />
         </ul>
     </div>
 </div>

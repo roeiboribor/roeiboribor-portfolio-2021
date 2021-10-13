@@ -30,6 +30,14 @@ class PageController extends Controller
     {
         return view('projects');
     }
+    public function blogs()
+    {
+        return view('blogs');
+    }
+    public function settings()
+    {
+        return view('settings');
+    }
 
     public function test()
     {
