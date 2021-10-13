@@ -78,7 +78,6 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/anime.min.js') }}"></script>
     <script>
         const topNavbar = document.querySelector('nav.top-navbar');
         const main = document.querySelector('main');

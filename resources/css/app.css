@@ -131,7 +131,7 @@ html {
     @apply overflow-visible;
 }
 .sidebar .nav-links li {
-    @apply relative transition-all duration-500 ease-in-out hover:bg-gray-300 dark:hover:bg-gray-800 select-none;
+    @apply relative transition-colors duration-500 ease-in-out hover:bg-gray-300 dark:hover:bg-gray-800 select-none;
 }
 .sidebar .nav-links li .icon-link {
     @apply flex items-center justify-between;
