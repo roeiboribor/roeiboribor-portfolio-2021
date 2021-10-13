@@ -84,35 +84,21 @@
         const topNavbar = document.querySelector('nav.top-navbar');
         const main = document.querySelector('main');
         const footer = document.querySelector('footer');
-
-        main.style.minHeight = `calc(100vh - ${getMinHeightMain()}px)`;
-
-        function getMinHeightMain() {
+        const hamburger = document.querySelector('#hamburger');
+        let isSidebar = localStorage.getItem('sidebar');
+        let arrows = document.querySelectorAll('.arrow');
+        
+        // FUNCTIONS
+        const getMinHeightMain = () => {
             const topNavbarHeight = topNavbar.clientHeight;
             const footerHeight = footer.clientHeight;
             return topNavbarHeight + footerHeight;
         }
 
-        // Dashboard Sidebar dropdown Arrow
-        let arrows = document.querySelectorAll('.arrow');
-
-        arrows.forEach((arrow) => {
-            arrow.addEventListener('click', () => {
-                let arrowParent = arrow.parentElement.parentElement;
-                arrowParent.classList.toggle('showMenu');
-            });
-        });
-
-        // Get sidebar value on local storage
-        let isSidebar = localStorage.getItem('sidebar');
-        const hamburger = document.querySelector('#hamburger');
-
-        hamburger.addEventListener('click', () => toggleSidebar())
-
         const checkSidebar = () => {
-            const sidebar = document.querySelector('.sidebar');
-            const mainContent = document.querySelector('.main-content');
-
+            const sidebar = document.querySelector('.sidebar').classList;
+            const mainContent = document.querySelector('.main-content').classList;
+        
             if (isSidebar === 'true') {
                 return true;
             } else {
@@ -128,6 +114,20 @@
                 localStorage.setItem('sidebar', 'false');
             }
         }
+
+        // INITIALIZE
+        main.style.minHeight = `calc(100vh - ${getMinHeightMain()}px)`;
+        
+        checkSidebar();
+        
+        hamburger.addEventListener('click', () => toggleSidebar())
+        
+        arrows.forEach((arrow) => {
+            arrow.addEventListener('click', () => {
+                let arrowParent = arrow.parentElement.parentElement;
+                arrowParent.classList.toggle('showMenu');
+            });
+        });
     </script>
 
     {{ $scripts ?? '' }}
