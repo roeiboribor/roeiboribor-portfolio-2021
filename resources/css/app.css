@@ -22,6 +22,10 @@ html {
 .overlay {
     @apply absolute inset-0 w-full h-full;
 }
+
+.dashboard-card {
+    @apply bg-white dark:bg-gray-900 rounded-lg p-4;
+}
 /* END GLOBAL CLASS */
 
 /* START OWL-CAROUSEL THEME */

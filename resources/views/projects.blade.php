@@ -7,9 +7,9 @@
         </div>
     </x-slot>
 
-    <div class="container pt-8">
-        <div class="bg-glass p-4 rounded-lg">
-            <h1>Card</h1>
+    <div class="container flex items-center justify-center pt-8 animate__animated animate__bounceInDown">
+        <div class="dashboard-card w-6/12">
+
         </div>
     </div>
 
