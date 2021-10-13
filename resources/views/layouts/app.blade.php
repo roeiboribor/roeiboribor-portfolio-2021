@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="author" content="Roei Boribor" />
 
     <title>{{ config('app.name', 'Roei Boribor') }}</title>
 
@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     {{-- Box Icons --}}
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/darkmode.js') }}" defer></script>
-    {{-- <script src="{{ asset('js/sidebar.js') }}" defer></script> --}}
     <style>
         /* width */
         ::-webkit-scrollbar {
@@ -53,13 +53,12 @@
         {{-- SIDEBAR --}}
         <x-dashboard.sidebar />
 
-        {{-- RIGHT CONTAINER --}}
+        {{-- MAIN CONTENT --}}
         <div :class="{'pl-60': open,'pl-20': ! open}" class="main-content pl-20 transition-all duration-300">
             <div class="relative min-h-screen pr-4">
-                {{-- TOP NAVIGATION BAR --}}
+
                 <x-dashboard.top-navbar />
 
-                {{-- MAIN CONTENT --}}
                 <main style="background-image: url('{{ asset('assets/img/trees.jpg') }}')" class="rounded-lg bg-white dark:bg-gray-800 shadow-inner relative bg-no-repeat bg-cover bg-center
                 bg-fixed overflow-hidden">
                     <div class="overlay rounded-lg bg-black opacity-20 z-0"></div>
@@ -74,7 +73,6 @@
                     </div>
                 </main>
 
-                {{-- FOOTER --}}
                 <x-dashboard.footer />
             </div>
         </div>
@@ -94,7 +92,7 @@
             return topNavbarHeight + footerHeight;
         }
 
-        // Dashboard Sidebar dropdown Arrw
+        // Dashboard Sidebar dropdown Arrow
         let arrows = document.querySelectorAll('.arrow');
 
         arrows.forEach((arrow) => {
@@ -104,6 +102,7 @@
             });
         });
 
+        // Get sidebar value on local storage
         let isSidebar = localStorage.getItem('sidebar');
         const hamburger = document.querySelector('#hamburger');
 
@@ -112,7 +111,7 @@
         const checkSidebar = () => {
             const sidebar = document.querySelector('.sidebar');
             const mainContent = document.querySelector('.main-content');
-            
+
             if (isSidebar === 'true') {
                 return true;
             } else {
