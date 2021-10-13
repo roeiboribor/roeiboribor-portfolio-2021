@@ -26,6 +26,11 @@ class PageController extends Controller
         return view('dashboard');
     }
 
+    public function projects()
+    {
+        return view('projects');
+    }
+
     public function test()
     {
         return view('pages.test');

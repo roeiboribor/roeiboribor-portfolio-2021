@@ -1,6 +1,12 @@
-@props(['title','href','icon'])
+@props(['active','title','href','icon'])
 
-<li>
+@php
+$classes = ($active ?? false)
+? 'bg-gray-300 dark:bg-gray-800'
+: '';
+@endphp
+
+<li {{ $attributes->merge(['class' => $classes]) }}>
     <div class="icon-link">
         <a {{ $attributes->merge(['href' => $href]) }}>
             <i class="{{  $icon  }} w-20 text-2xl"></i>

@@ -11,9 +11,10 @@
         </div>
         <ul :class="{'overflow-auto': open, 'overflow-visible': !open}"
             class="nav-links h-full whitespace-nowrap scrollbar-hide pt-7 pb-36">
-            <x-dashboard.list-item :href="route('dashboard')" :icon="__('bx bx-grid-alt')" :title="__('Dashboard')" />
-            <x-dashboard.list-item-dropdown :href="route('dashboard')" :icon="__('bx bxs-folder-open')"
-                :title="__('Projects')">
+            <x-dashboard.list-item :href="route('dashboard')" :icon="__('bx bx-grid-alt')" :title="__('Dashboard')"
+                :active="request()->routeIs('dashboard')" />
+            <x-dashboard.list-item-dropdown :href="route('projects')" :icon="__('bx bxs-folder-open')"
+                :title="__('Projects')" :active="request()->routeIs('projects')">
                 <li>
                     <a href="#create">Create</a>
                 </li>
@@ -24,8 +25,7 @@
                     <a href="#delete">Delete</a>
                 </li>
             </x-dashboard.list-item-dropdown>
-            <x-dashboard.list-item-dropdown :href="route('dashboard')" :icon="__('bx bxl-blogger')"
-                :title="__('Blogs')">
+            <x-dashboard.list-item-dropdown :href="route('home')" :icon="__('bx bxl-blogger')" :title="__('Blogs')">
                 <li>
                     <a href="#create">Create</a>
                 </li>
@@ -36,7 +36,7 @@
                     <a href="#delete">Delete</a>
                 </li>
             </x-dashboard.list-item-dropdown>
-            <x-dashboard.list-item :href="route('dashboard')" :icon="__('bx bx-cog')" :title="__('Settings')" />
+            <x-dashboard.list-item :href="route('home')" :icon="__('bx bx-cog')" :title="__('Settings')" />
         </ul>
     </div>
 </div>
