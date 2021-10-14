@@ -13,10 +13,10 @@
             class="nav-links h-full whitespace-nowrap scrollbar-hide pt-7 pb-36">
             <x-dashboard.list-item :href="route('dashboard')" :icon="__('bx bx-grid-alt')" :title="__('Dashboard')"
                 :active="request()->routeIs('dashboard')" />
-            <x-dashboard.list-item-dropdown :href="route('projects')" :icon="__('bx bxs-folder-open')"
-                :title="__('Projects')" :active="request()->routeIs('projects')">
+            <x-dashboard.list-item-dropdown :href="route('projects.index')" :icon="__('bx bxs-folder-open')"
+                :title="__('Projects')" :active="request()->routeIs('projects.index')">
                 <li>
-                    <a href="#create">Create</a>
+                    <a href="{{ route('projects.create') }}">Add Project</a>
                 </li>
                 <li>
                     <a href="#update">Update</a>
