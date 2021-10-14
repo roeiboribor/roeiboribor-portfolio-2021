@@ -17,6 +17,7 @@ module.exports = {
                 tilt: 'tilt 5s infinite linear',
                 "slide-in-right": 'slide-in-right 0.7s both',
                 "fade-out-right": 'fade-out-right 0.7s both',
+                spin: 'spin 2s linear infinite',
             },
             keyframes: {
                 tilt: {

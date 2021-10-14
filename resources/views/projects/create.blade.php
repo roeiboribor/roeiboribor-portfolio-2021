@@ -7,11 +7,26 @@
         </div>
     </x-slot>
 
-    <div class="container flex items-center justify-center pt-4 animate__animated animate__bounceInDown">
-        <div class="dashboard-card w-7/12 overflow-y-auto">
+    @if (session('status'))
+    <x-alert-toast @click.away="hideToast()" class="{{ session('status')=='success' ? 'bg-green-600': 'bg-red-600' }}
+                    fixed top-16 right-0">
+        {{ session('status') == 'success'
+        ? 'Project has been successfully Added!'
+        : 'An error has occured please try again!' }}
+    </x-alert-toast>
+    @endif
 
-            <x-auth-session-status class="mb-4" :status="session('status')" />
+    <div x-data="{isLoader: false}"
+        class="container flex items-center justify-center pt-4 animate__animated animate__bounceInDown">
+        <div class="relative dashboard-card w-7/12 overflow-y-auto">
+
             <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+            {{-- LOADING ICON --}}
+            <div :class="{'flex': isLoader,'hidden': ! isLoader}"
+                class="hidden overlay bg-black bg-opacity-30 z-10 items-center justify-center">
+                <i class='bx bx-loader-circle animate-spin text-9xl'></i>
+            </div>
 
             <form method="POST" action="{{ route('projects.store') }}" enctype="multipart/form-data">
                 @csrf
@@ -24,7 +39,7 @@
                         </div>
 
                         <x-input id="slug" class="mt-1 w-full disabled:bg-gray-200 text-smalt-700" type="hidden"
-                            name="slug" :value="old('slug')" />
+                            name="slug" :value="old('slug')" required />
 
                         <div class="mt-3">
                             <x-label for="tags" :value="__('Tags')" />
@@ -46,7 +61,7 @@
                     <div class="col-span-1 flex flex-col items-center justify-center space-y-4">
                         <img class="image-display h-32 shadow" src="{{ asset('assets/img/portfolio/choose-img.jpg') }}">
                         <x-label for="image"
-                            class="cursor-pointer text-gray-100 bg-gradient-to-r from-green-400 to-blue-500 px-3 py-1 tracking-widest rounded transform active:scale-95">
+                            class="cursor-pointer text-gray-100 bg-gradient-to-r from-green-400 to-blue-500 px-3 py-1 tracking-widest rounded transition transform active:scale-95 shadow hover:shadow-md">
                             <i class='bx bx-upload text-xl'></i> Upload image
                         </x-label>
                         <input id="image" class="mt-3 w-full hidden" type="file"
@@ -58,14 +73,14 @@
                     <x-label for="description" :value="__('Description')" />
                     <x-textarea name="description" class="block mt-1 h-52 w-full text-smalt-700 resize-none"
                         id="description" :value="old('description')"
-                        placeholder="Type brief description of the project...">
+                        placeholder="Type brief description of the project..." required>
                     </x-textarea>
                 </div>
 
-                <div class="flex items-center justify-end mt-8">
-                    <x-button
-                        class="ml-3 bg-green-500 hover:bg-green-400 transform active:scale-95 active:bg-green-600">
-                        {{ __('Confirm') }}
+                <div class="flex items-center justify-center mt-8">
+                    <x-button @click="isLoader = validateForm()"
+                        class="ml-3 bg-green-500 hover:bg-green-400 transform active:scale-95 active:bg-green-600 hover:shadow-md shadow">
+                        {{ __('Save') }}
                     </x-button>
                 </div>
             </form>
@@ -96,14 +111,31 @@
                     }
                 });  
             }
+
+            const validateForm = () => {
+                const requiredInputs = document.querySelectorAll('[required]');
+                const image = document.querySelector('#image');
+                let hasEmptyInput = true;
+                requiredInputs.forEach(requiredInput => {
+                    if(requiredInput.value =='') {
+                        hasEmptyInput = false;
+                    }
+                });
+
+                if(image.value == '') {
+                    hasEmptyInput = false;
+                }
+
+                return hasEmptyInput;
+            }
+
+            const hideToast = () => {
+                const alertToast = document.querySelector('.alert-toast');
+                alertToast.classList.add('animate-fade-out-right');
+            }
             
-            function convertToSlug(Text)
-            {
-                return Text
-                .toLowerCase()
-                .replace(/ /g,'-')
-                .replace(/[^\w-]+/g,'')
-                ;
+            const convertToSlug = (Text) => {
+                return Text.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
             }
 
             image.addEventListener('change', () => {
@@ -124,6 +156,8 @@
                     });
                 }
             }
+
+            validateForm();
         </script>
     </x-slot>
 </x-app-layout>

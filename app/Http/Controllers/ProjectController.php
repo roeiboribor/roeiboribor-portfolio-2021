@@ -16,7 +16,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('projects.index');
+        $projects = Projects::get();
+        return view('projects.index',compact($projects));
     }
 
     /**
@@ -51,9 +52,9 @@ class ProjectController extends Controller
                 'created_at' => Carbon::now(),
             ]);
 
-            return back()->with('message', 'A project has been added');
+            return back()->with('status', 'success');
         } catch (Exception $err) {
-            return back()->with('message', 'Error has occured:'.$err);
+            return back()->with('status', 'error');
         }
     }
 

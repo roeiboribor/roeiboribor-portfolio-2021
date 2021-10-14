@@ -8,8 +8,35 @@
     </x-slot>
 
     <div class="container flex items-center justify-center pt-8 animate__animated animate__bounceInDown">
-        <div class="dashboard-card w-6/12">
-            <h1 class="text-center font-extrabold text-5xl">Index</h1>
+        <div class="dashboard-card w-full">
+            <div class="relative w-4/12 flex items-center mx-auto">
+                <x-input id="search" class="block ml-1 w-full text-smalt-700 pr-16" type="text" name="search"
+                    :value="old('search')" placeholder="search..." />
+                <x-button
+                    class="absolute right-0.5 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400">
+                    <i class='bx bx-search-alt text-xl'></i>
+                </x-button>
+            </div>
+            <div class="mt-8 grid grid-cols-4 gap-4">
+                <div class="rounded bg-gray-50 dark:bg-gray-700 p-4 shadow">
+                    <h1 class="text-center">Card</h1>
+                </div>
+                <div class="rounded bg-gray-50 dark:bg-gray-700 p-4 shadow">
+                    <h1 class="text-center">Card</h1>
+                </div>
+                <div class="rounded bg-gray-50 dark:bg-gray-700 p-4 shadow">
+                    <h1 class="text-center">Card</h1>
+                </div>
+                <div class="rounded bg-gray-50 dark:bg-gray-700 p-4 shadow">
+                    <h1 class="text-center">Card</h1>
+                </div>
+                <div class="rounded bg-gray-50 dark:bg-gray-700 p-4 shadow">
+                    <h1 class="text-center">Card</h1>
+                </div>
+                <div class="rounded bg-gray-50 dark:bg-gray-700 p-4 shadow">
+                    <h1 class="text-center">Card</h1>
+                </div>
+            </div>
         </div>
     </div>
 
