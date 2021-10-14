@@ -62,7 +62,7 @@
                 <x-dashboard.top-navbar />
 
                 <main style="background-image: url('{{ asset('assets/img/trees.jpg') }}')" class="rounded-lg bg-white dark:bg-gray-800 shadow-inner relative bg-no-repeat bg-cover bg-center
-                bg-fixed overflow-hidden">
+                bg-fixed overflow-hidden pb-8">
                     <div class="overlay rounded-lg bg-black opacity-20 z-0"></div>
                     <div class="relative z-10 overflow-hidden">
                         <header class="header flex items-center">
