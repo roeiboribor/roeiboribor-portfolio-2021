@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Projects\ProjectStoreRequest;
+use App\Models\Projects;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -39,7 +41,7 @@ class ProjectController extends Controller
             $newImageName = uniqid().'-'.$request->slug.'.'.$request->image->extension();
             $request->image->move(public_path('assets\img\portfolio\projects'),$newImageName);
 
-            Project::create([
+            Projects::create([
                 'title' => $request->title,
                 'slug' => $request->slug,
                 'tags' => $request->tags,

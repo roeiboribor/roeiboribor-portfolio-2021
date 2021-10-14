@@ -9,14 +9,5 @@ class Projects extends Model
 {
     use HasFactory;
 
-    protected $fillables = [
-        'title',
-        'slug',
-        'tags',
-        'link',
-        'description',
-        'image',
-        'updated_at',
-        'created_at',
-    ];
+    protected $guarded = ['id'];
 }
