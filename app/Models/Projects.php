@@ -12,13 +12,11 @@ class Projects extends Model
     protected $fillables = [
         'title',
         'slug',
+        'tags',
         'link',
-        'image',
         'description',
+        'image',
         'updated_at',
-    ];
-
-    protected $casts = [
-        'tags' => 'array'
+        'created_at',
     ];
 }

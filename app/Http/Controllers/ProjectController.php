@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Projects\ProjectStoreRequest;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -32,9 +33,26 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectStoreRequest $request)
     {
-        //
+        try {
+            $newImageName = uniqid().'-'.$request->slug.'.'.$request->image->extension();
+            $request->image->move(public_path('assets\img\portfolio\projects'),$newImageName);
+
+            Project::create([
+                'title' => $request->title,
+                'slug' => $request->slug,
+                'tags' => $request->tags,
+                'link' => $request->tags,
+                'description' => $request->description,
+                'image' => $newImageName,
+                'created_at' => Carbon::now(),
+            ]);
+
+            return back()->with('message', 'A project has been added');
+        } catch (Exception $err) {
+            return back()->with('message', 'Error has occured:'.$err);
+        }
     }
 
     /**
