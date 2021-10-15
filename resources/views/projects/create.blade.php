@@ -89,16 +89,10 @@
 
     <x-slot name="scripts">
         <script>
-            let title = document.querySelector('#title');
             let tags = document.querySelector('#tags');
             let tagsContainer = document.querySelector('.tags-container');
-            let slug = document.querySelector('#slug');
             let image = document.querySelector('#image');
             let imageDisplay = document.querySelector('.image-display');
-            
-            title.addEventListener('keyup', (e) => {
-                slug.value = convertToSlug(e.target.value);
-            });
 
             const tagsToArray = (el) => {
                 let wordTags = el.split(', ');
@@ -113,6 +107,7 @@
             }
 
             const validateForm = () => {
+                convertToSlug();
                 const requiredInputs = document.querySelectorAll('[required]');
                 const image = document.querySelector('#image');
                 let hasEmptyInput = true;
@@ -134,8 +129,14 @@
                 alertToast.classList.add('animate-fade-out-right');
             }
             
-            const convertToSlug = (Text) => {
-                return Text.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+            const convertToSlug = () => {
+                const title = document.querySelector('#title');
+                const slug = document.querySelector('#slug');
+                
+                slug.value = title.value
+                .toLowerCase()
+                .replace(/ /g,'-')
+                .replace(/[^\w-]+/g,'');
             }
 
             image.addEventListener('change', () => {
