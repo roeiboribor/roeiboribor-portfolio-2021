@@ -49,7 +49,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div id="app" x-data="{open: checkSidebar()}"
+    <div id="app" x-data="{open: checkSidebar(),showModal : false,slug: '' }"
         class="relative min-h-screen text-smalt-900 dark:text-gray-100 bg-white dark:bg-gray-900 z-0">
 
         {{-- SIDEBAR --}}
@@ -78,6 +78,9 @@
                 <x-dashboard.footer />
             </div>
         </div>
+
+        {{-- START MODAL --}}
+        {{ $modal ?? '' }}
     </div>
 
     <script>

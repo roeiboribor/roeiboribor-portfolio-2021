@@ -6,7 +6,6 @@ use App\Http\Requests\Projects\ProjectStoreRequest;
 use App\Http\Requests\Projects\ProjectUpdateRequest;
 use App\Models\Project;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -122,8 +121,9 @@ class ProjectController extends Controller
     {
         try {
             $project = Project::firstWhere('slug', $slug);
+            unlink('assets/img/portfolio/projects/' . $project->image);
             $project->delete();
-            return redirect()->back()->with('status', 'success');
+            return back()->with('status', 'success');
         } catch (\Throwable $th) {
             return back()->with('status', 'error');
         }
