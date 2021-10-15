@@ -15,8 +15,8 @@ class PageController extends Controller
             // 'blogs',
             // 'contact',
         ];
-        
-        return view('home',[
+
+        return view('home', [
             'sections' => $sections,
         ]);
     }
@@ -30,7 +30,7 @@ class PageController extends Controller
     {
         return view('blogs');
     }
-    
+
     public function settings()
     {
         return view('settings');

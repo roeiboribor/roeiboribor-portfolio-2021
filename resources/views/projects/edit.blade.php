@@ -30,6 +30,7 @@
 
             <form method="POST" action="{{ route('projects.update',$project->slug) }}" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="grid gap-4 grid-cols-3">
                     <div class="col-span-2">
                         <div>
