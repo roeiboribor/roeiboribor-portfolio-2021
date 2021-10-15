@@ -17,7 +17,9 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Projects::get();
-        return view('projects.index',compact($projects));
+        return view('projects.index',[
+            'projects' => $projects,
+        ]);
     }
 
     /**
@@ -46,7 +48,7 @@ class ProjectController extends Controller
                 'title' => $request->title,
                 'slug' => $request->slug,
                 'tags' => $request->tags,
-                'link' => $request->tags,
+                'link' => $request->link,
                 'description' => $request->description,
                 'image' => $newImageName,
                 'created_at' => Carbon::now(),
