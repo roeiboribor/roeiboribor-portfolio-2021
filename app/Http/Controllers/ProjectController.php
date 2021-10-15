@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Projects\ProjectStoreRequest;
-use App\Models\Projects;
+use App\Models\Project;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Projects::get();
+        $projects = Project::get();
         return view('projects.index',[
             'projects' => $projects,
         ]);
@@ -44,7 +44,7 @@ class ProjectController extends Controller
             $newImageName = uniqid().'-'.$request->slug.'.'.$request->image->extension();
             $request->image->move(public_path('assets\img\portfolio\projects'),$newImageName);
 
-            Projects::create([
+            Project::create([
                 'title' => $request->title,
                 'slug' => $request->slug,
                 'tags' => $request->tags,
@@ -61,25 +61,17 @@ class ProjectController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $project = Project::where('slug',$slug)->first();
+        return view('projects.edit',[
+            'project' => $project
+        ]);
     }
 
     /**
