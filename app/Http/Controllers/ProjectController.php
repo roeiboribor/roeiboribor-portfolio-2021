@@ -41,6 +41,7 @@ class ProjectController extends Controller
      */
     public function store(ProjectStoreRequest $request)
     {
+
         try {
             $newImageName = uniqid() . '-' . $request->slug . '.' . $request->image->extension();
             $request->image->move(public_path('assets\img\portfolio\projects'), $newImageName);
@@ -87,12 +88,12 @@ class ProjectController extends Controller
         try {
             $project = Project::where('slug', $slug)->first();
 
-            if ($request->image) {
+            if ($request->image == null) {
+                $newImageName = $project->image;
+            } elseif ($request->image) {
                 $newImageName = uniqid() . '-' . $request->slug . '.' . $request->image->extension();
                 $request->image->move(public_path('assets\img\portfolio\projects'), $newImageName);
-                unlink('assets/img/projects/' . $project->image);
-            } else {
-                $newImageName = $project->image;
+                unlink('assets/img/portfolio/projects/' . $project->image);
             }
 
             $project->update([
@@ -105,8 +106,8 @@ class ProjectController extends Controller
                 'updated_at' => Carbon::now(),
             ]);
 
-            return back()->with('status', 'success');
-        } catch (Exception $err) {
+            return redirect()->route('projects.edit', $request->slug)->with('status', 'success');
+        } catch (\Throwable $th) {
             return back()->with('status', 'error');
         }
     }
@@ -117,8 +118,14 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        try {
+            $project = Project::firstWhere('slug', $slug);
+            $project->delete();
+            return redirect()->back()->with('status', 'success');
+        } catch (\Throwable $th) {
+            return back()->with('status', 'error');
+        }
     }
 }

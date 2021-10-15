@@ -112,17 +112,12 @@
             const validateForm = () => {
                 convertToSlug();
                 const requiredInputs = document.querySelectorAll('[required]');
-                const image = document.querySelector('#image');
                 let hasEmptyInput = true;
                 requiredInputs.forEach(requiredInput => {
                     if(requiredInput.value =='') {
                         hasEmptyInput = false;
                     }
                 });
-
-                if(image.value == '') {
-                    hasEmptyInput = false;
-                }
 
                 return hasEmptyInput;
             }

@@ -170,7 +170,8 @@ html {
 .sidebar.close .nav-links li .sub-menu {
     @apply absolute left-full -top-3 mt-0 py-3 px-5 rounded-r-md opacity-0 block pointer-events-none transition-none;
 }
-.sidebar.close .nav-links li:hover .sub-menu {
+.sidebar.close .nav-links li:hover .sub-menu,
+.sidebar.close .nav-links li:focus .sub-menu {
     @apply top-0 opacity-100 pointer-events-auto transition-all duration-500 ease-in-out;
 }
 .sidebar .nav-links li .sub-menu .link_name {
