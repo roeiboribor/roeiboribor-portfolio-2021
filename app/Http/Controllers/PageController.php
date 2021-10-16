@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -16,8 +17,11 @@ class PageController extends Controller
             // 'contact',
         ];
 
+        $projects = Project::get();
+
         return view('home', [
             'sections' => $sections,
+            'projects' => $projects,
         ]);
     }
 

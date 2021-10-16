@@ -18,12 +18,6 @@
                 <li>
                     <a href="{{ route('projects.create') }}">Add Project</a>
                 </li>
-                <li>
-                    <a href="#update">Update</a>
-                </li>
-                <li>
-                    <a href="#delete">Delete</a>
-                </li>
             </x-dashboard.list-item-dropdown>
             <x-dashboard.list-item-dropdown :href="route('blogs')" :icon="__('bx bxl-blogger')" :title="__('Blogs')"
                 :active="request()->routeIs('blogs')">

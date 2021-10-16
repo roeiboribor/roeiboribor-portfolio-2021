@@ -70,7 +70,7 @@
                             <p class="text-xl ml-8">{{ $loop->index+1 }}</p>
                         </div>
                         <section class="{{ $section }} pt-16">
-                            <x-dynamic-component :component="'portfolio.'.$section.'-section'" />
+                            <x-dynamic-component :component="'portfolio.'.$section.'-section'" :projects="$projects" />
                         </section>
                     </div>
                     @endforeach
@@ -128,12 +128,28 @@
                     e.preventDefault();
                 });
             });
+            
+            const project = () => {
+                return {
+                    project: '',
+                    tags: null,
+                    isProject: false,
+                    getProject(slug) {
+                        fetch(`http://tracker.test/api/project/${slug}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            this.project = data;
+                            this.tags = data.tags.split(', ');
+                            this.isProject = true;
+                        });
+                    }
+                }
+            }
 
             const header = document.querySelector('header');
             const main = document.querySelector('main');
             const profileCard = document.querySelector('.profile-card');
             const projectorDesc = document.querySelector('.projector .description');
-            const btnReadmore = document.querySelector('.projector #btnReadmore');
 
             const navitems = document.querySelectorAll('.nav-list .navitem');
             const badges = document.querySelectorAll('.badge');
@@ -149,16 +165,6 @@
                     removeActiveClass(navitems);
                     navitem.classList.add('active');
                 })
-            });
-
-            btnReadmore.addEventListener('click', (e) => {
-                toggleExpand(projectorDesc);
-                if(e.target.innerText == "See More...") {
-                    e.target.innerText = `See Less...`;
-                } else {
-                    e.target.innerText = `See More...`;
-                }
-                
             });
 
             function toggleExpand(element) {
