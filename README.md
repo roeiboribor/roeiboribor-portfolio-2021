@@ -12,9 +12,13 @@ It inspires me to use gradient neon shadow effects to showcase the innovative lo
 -   Helpers for me to loop into contents to avoid Don't Repeat Yourself **(DRY)**
 -   Seperate each blades into reusable components
 -   Used a vanilla JavaScript for dynamic changes of the elements
+-   Slowly upgrading to alpine JS for better state usage
 
 ## Library/Framework used:
 
 -   Laravel 8
 -   Tailwind CSS
--   Animate.css cdn
+-   Animate.css
+-   Owl Carousel
+-   jQuery
+-   Alpine.js
