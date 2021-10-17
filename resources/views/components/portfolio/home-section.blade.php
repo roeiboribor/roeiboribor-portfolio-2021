@@ -1,3 +1,5 @@
+@props(['projects'])
+
 <div class="absolute right-8 top-12 hidden lg:block">
     <a href="#about">
         <div class="relative text-gray-100 border-white border-2 rounded-full h-24 w-8">
@@ -19,7 +21,7 @@
         <div class="relative col-span-3 md:col-span-1">
             <div class="relative card shadow-lg p-8 z-10">
                 <div class="flex items-center justify-center">
-                    <h2 class="text-5xl font-bold">2</h2>
+                    <h2 class="text-5xl font-bold">{{ $projects->count() }}</h2>
                     <i class='bx bx-plus text-3xl text-smalt-200'></i>
                 </div>
                 <div class="line-dotted m-4"></div>

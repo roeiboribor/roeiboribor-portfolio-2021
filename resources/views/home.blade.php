@@ -60,7 +60,7 @@
                 </div>
                 <div class="col-span-12 lg:col-span-8 px-4 pt-16 md:pt-40 lg:pt-72">
                     <section id="home" class="home relative mb-8 pt-4">
-                        <x-portfolio.home-section />
+                        <x-portfolio.home-section :projects="$projects" />
                     </section>
                     @foreach ($sections as $section)
                     <div id="{{ $section }}" class="py-8">
