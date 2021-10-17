@@ -28,11 +28,6 @@
                     <i class='bx bx-user-plus text-xl mr-3'></i> New User
                 </x-a-button>
             </div>
-            <div class="absolute top-4 left-8">
-                <h2 class="text-3xl">
-                    <i class='bx bx-group'></i> {{ $users->count() }}
-                </h2>
-            </div>
 
             <div class="mt-8 mb-4">
                 <table class="table-fixed w-full rounded">
@@ -82,7 +77,7 @@
                     </tbody>
                 </table>
                 <div class="mt-3">
-                    {{ $users->onEachSide(5)->links() }}
+                    {{ $users->links() }}
                 </div>
             </div>
         </div>
