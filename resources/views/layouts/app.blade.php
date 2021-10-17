@@ -66,7 +66,7 @@
                     <div class="overlay rounded-lg bg-black opacity-20 z-0"></div>
                     <div class="relative z-10 overflow-hidden">
                         <header class="header flex items-center">
-                            {{ $header }}
+                            {{ $header ?? '' }}
                         </header>
 
                         <div class="px-4">

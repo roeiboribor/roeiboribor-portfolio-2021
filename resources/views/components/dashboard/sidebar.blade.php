@@ -31,8 +31,8 @@
                     <a href="#delete">Delete</a>
                 </li>
             </x-dashboard.list-item-dropdown>
-            <x-dashboard.list-item :href="route('settings')" :icon="__('bx bx-cog')" :title="__('Settings')"
-                :active="request()->routeIs('settings')" />
+            <x-dashboard.list-item :href="route('settings.index')" :icon="__('bx bx-cog')" :title="__('Settings')"
+                :active="request()->routeIs('settings.index')" />
         </ul>
     </div>
 </div>

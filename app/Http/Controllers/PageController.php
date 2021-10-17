@@ -35,11 +35,6 @@ class PageController extends Controller
         return view('blogs');
     }
 
-    public function settings()
-    {
-        return view('settings');
-    }
-
     public function test()
     {
         return view('pages.test');
