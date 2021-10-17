@@ -37,9 +37,6 @@
                     name="password_confirmation" required />
             </div>
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm hover:text-gray-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
                 <x-button class="ml-4 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400 ">
                     {{ __('Register') }}
                 </x-button>
