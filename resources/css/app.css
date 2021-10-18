@@ -131,6 +131,8 @@ html {
     }
 }
 /* END PORTFOLIO THEME */
+
+/* START DASHBOARD */
 .sidebar.close .nav-links {
     @apply overflow-visible;
 }
@@ -185,4 +187,8 @@ html {
 }
 .sidebar .nav-links li:hover .sub-menu.blank {
     @apply top-1/2 transform -translate-y-1/2;
+}
+
+nav[role="navigation"] p {
+    @apply text-gray-800 dark:text-gray-200;
 }
