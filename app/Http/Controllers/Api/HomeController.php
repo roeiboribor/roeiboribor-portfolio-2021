@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function project($slug)
     {
-        $project = Project::select('title', 'tags', 'slug', 'description')
+        $project = Project::select('title', 'tags', 'slug', 'link', 'description')
             ->where('slug', $slug)
             ->first();
 

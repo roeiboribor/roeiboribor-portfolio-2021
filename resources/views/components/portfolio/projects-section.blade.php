@@ -17,6 +17,12 @@
             x-transition:leave-end="opacity-0">
             <div class="relative card z-10 px-8 py-4 shadow-lg">
                 <h3 class="text-2xl font-semibold tracking-wider" x-text="project.title"></h3>
+                <div class="absolute top-2 right-4">
+                    <x-a-button x-bind:href="project.link" target="__blank" class="bg-green-500 hover:bg-green-400 transform active:scale-95
+                                        active:bg-green-600">
+                        {{ __('Visit Website') }}
+                    </x-a-button>
+                </div>
                 <div class="badges mt-2">
                     <template x-for="tag in tags" :key="project.slug">
                         <span class="badge animate__animated" x-text="tag"></span>
