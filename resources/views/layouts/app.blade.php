@@ -65,7 +65,7 @@
                 bg-fixed overflow-hidden pb-8">
                     <div class="overlay rounded-lg bg-black opacity-20 z-0"></div>
                     <div class="relative z-10 overflow-hidden">
-                        <header class="header flex items-center">
+                        <header :class="{'hidden': open, 'flex': !open}" class="header items-center">
                             {{ $header ?? '' }}
                         </header>
 
