@@ -13,6 +13,7 @@
             class="nav-links h-full whitespace-nowrap scrollbar-hide pt-7 pb-36">
             <x-dashboard.list-item :href="route('dashboard')" :icon="__('bx bx-grid-alt')" :title="__('Dashboard')"
                 :active="request()->routeIs('dashboard')" />
+            @if (Auth::user()->role == 'super')
             <x-dashboard.list-item-dropdown :href="route('projects.index')" :icon="__('bx bxs-folder-open')"
                 :title="__('Projects')" :active="request()->routeIs('projects.index')">
                 <li>
@@ -33,6 +34,7 @@
             </x-dashboard.list-item-dropdown>
             <x-dashboard.list-item :href="route('settings.index')" :icon="__('bx bx-cog')" :title="__('Settings')"
                 :active="request()->routeIs('settings.index')" />
+            @endif
         </ul>
     </div>
 </div>
