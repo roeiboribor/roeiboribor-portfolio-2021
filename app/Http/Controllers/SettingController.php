@@ -47,7 +47,7 @@ class SettingController extends Controller
     public function update(UserUpdateRequest $request, $id)
     {
         try {
-            $user = User::where('id', $id)->first();
+            $user = User::firstWhere('id', $id);
 
             $user->update([
                 'first_name' => $request->first_name,
@@ -73,6 +73,12 @@ class SettingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $user = User::firstWhere('id', $id);
+            $user->delete();
+            return back()->with('status', 'success');
+        } catch (\Throwable $th) {
+            return back()->with('status', 'error');
+        }
     }
 }

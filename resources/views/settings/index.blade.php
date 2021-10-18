@@ -66,7 +66,7 @@
                                         <i class='bx bx-edit text-xl'></i>
                                     </x-a-button>
                                     <x-button
-                                        @click="showModal = !showModal, slug = '{{ route('settings.destroy',$user->id) }}'"
+                                        @click="showModal = !showModal, id = '{{ route('settings.destroy',$user->id) }}'"
                                         class="bg-red-500 hover:bg-red-400 transform active:scale-95 active:bg-red-600 hover:shadow-md shadow">
                                         <i class='bx bx-trash text-xl'></i>
                                     </x-button>
@@ -89,11 +89,11 @@
                 {{ __('⚠️ Warning!!⚠️') }}
             </x-slot>
 
-            <p class="text-center my-8">Are you sure you want to delete the project?</p>
+            <p class="text-center my-8">Are you sure you want to delete this User?</p>
 
             <x-slot name="buttons">
                 {{-- --}}
-                <form method="POST" :action="slug">
+                <form method="POST" :action="id">
                     @csrf
                     @method('DELETE')
                     <x-button @click="showModal = !showModal"

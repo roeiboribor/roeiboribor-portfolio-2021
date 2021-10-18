@@ -49,7 +49,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div id="app" x-data="{open: checkSidebar(),showModal : false,slug: '' }"
+    <div id="app" x-data="{open: checkSidebar(),showModal : false,slug: '',id: ''}"
         class="relative min-h-screen text-smalt-900 dark:text-gray-100 bg-white dark:bg-gray-900 z-0">
 
         {{-- SIDEBAR --}}
