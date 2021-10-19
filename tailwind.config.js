@@ -74,7 +74,7 @@ module.exports = {
             opacity: ['disabled', 'dark'],
             scale: ['active', 'group-hover'],
             backgroundColor: ['checked', 'active', 'disabled'],
-            translate: ['dark'],
+            translate: ['dark', 'group-hover'],
             position: ['dark'],
             filter: ['dark'],
             blur: ['dark'],
