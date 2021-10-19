@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -27,7 +28,22 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $users = $this->getDashboardData();
+        return view('dashboard', [
+            'users' => $users,
+        ]);
+    }
+
+    private function getDashboardData()
+    {
+        $data = [];
+        $usersCount = User::get()->count();
+        $agentsCount = User::where('role', 'agent')->get()->count();
+        $data = [
+            'usersCount' => $usersCount,
+            'agentsCount' => $agentsCount,
+        ];
+        return $data;
     }
 
     public function blogs()
