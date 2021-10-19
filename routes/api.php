@@ -21,5 +21,3 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         return $request->user();
     });
 });
-
-Route::get('/project/{slug}', [HomeController::class, 'project']);

@@ -99,53 +99,6 @@
     </div>
     <x-slot name="scripts">
         <script defer>
-            $(document).ready(function(){
-                var owl = $('.owl-carousel');
-
-                owl.owlCarousel({
-                    loop:true,
-                    center: true,
-                    margin:10,
-                    responsive:{
-                        0:{
-                        items:1,
-                        },
-                        600:{
-                        items:2,
-                        },
-                        1024:{
-                        items:3,
-                        },
-                    }
-                });
-
-                owl.on('mousewheel', '.owl-stage', function (e) {
-                    if (e.deltaY>0) {
-                        owl.trigger('next.owl');
-                    } else {
-                        owl.trigger('prev.owl');
-                    }
-                    e.preventDefault();
-                });
-            });
-            
-            const project = () => {
-                return {
-                    project: '',
-                    tags: null,
-                    isProject: false,
-                    getProject(slug) {
-                        fetch(`http://tracker.test/api/project/${slug}`)
-                        .then(res => res.json())
-                        .then(data => {
-                            this.project = data;
-                            this.tags = data.tags.split(', ');
-                            this.isProject = true;
-                        });
-                    }
-                }
-            }
-
             const header = document.querySelector('header');
             const main = document.querySelector('main');
             const profileCard = document.querySelector('.profile-card');
