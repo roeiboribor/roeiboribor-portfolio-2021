@@ -82,6 +82,7 @@ module.exports = {
             animation: ['dark', 'hover'],
             width: ['group-hover'],
             rotate: ['group-hover'],
+            pointerEvents: ['group-hover', 'focus'],
         },
     },
     plugins: [

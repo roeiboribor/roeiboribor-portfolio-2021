@@ -18,7 +18,7 @@ class PageController extends Controller
             // 'contact',
         ];
 
-        $projects = Project::get();
+        $projects = Project::select('title', 'link', 'image', 'tags', 'description')->get();
 
         return view('home', [
             'sections' => $sections,
