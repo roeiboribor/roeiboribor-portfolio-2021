@@ -2,7 +2,7 @@
 <div class="grid grid-cols-2">
     @foreach ($projects as $project)
     <div
-        class="relative rounded col-span-2 md:col-span-1 cursor-pointer group overflow-hidden bg-white dark:bg-smalt-900">
+        class="relative shadow-lg rounded col-span-2 md:col-span-1 cursor-pointer group overflow-hidden bg-white dark:bg-smalt-900">
         <img class="relative transform duration-300 group-hover:scale-150 group-hover:opacity-0"
             src="{{ asset('assets/img/portfolio/projects/'.$project->image) }}"
             alt="{{ $project->title.' Screenshot' }}">
@@ -20,7 +20,7 @@
                 @endforeach
             </div>
             <p
-                class="hidden mt-4 transition duration-500 ease-in-out transform -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 md:line-clamp-5">
+                class="hidden mt-4 text-sm transition duration-500 ease-in-out transform -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 md:line-clamp-5">
                 {{ $project->description }}
             </p>
             <x-a-button :href="$project->link" target="__blank"
