@@ -82,6 +82,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="mt-3">
+                    {{ $projects->links() }}
+                </div>
             </div>
         </div>
     </div>

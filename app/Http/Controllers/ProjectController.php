@@ -6,6 +6,7 @@ use App\Http\Requests\Projects\ProjectStoreRequest;
 use App\Http\Requests\Projects\ProjectUpdateRequest;
 use App\Models\Project;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -14,9 +15,12 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projects = Project::get();
+        $projects = Project::where('title', 'like', '%' . $request->search . '%')
+            ->orWhere('tags', 'like', '%' . $request->search . '%')
+            ->orWhere('link', 'like', '%' . $request->search . '%')
+            ->paginate(10);
         return view('projects.index', [
             'projects' => $projects,
         ]);

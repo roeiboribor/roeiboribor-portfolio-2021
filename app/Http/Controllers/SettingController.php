@@ -15,9 +15,14 @@ class SettingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::where('id', '!=', 1)->paginate(10);
+        $users = User::where('id', '!=', 1)
+            ->Where('first_name', 'like', '%' . $request->search . '%')
+            ->orWhere('last_name', 'like', '%' . $request->search . '%')
+            ->orWhere('email', 'like', '%' . $request->search . '%')
+            ->orWhere('role', 'like', '%' . $request->search . '%')
+            ->paginate(10);
         return view('settings.index', [
             'users' => $users
         ]);
