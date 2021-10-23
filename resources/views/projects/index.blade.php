@@ -21,7 +21,7 @@
             <form method="GET" action="{{ route('projects.index') }}">
                 <div class="relative w-4/12 flex items-center mx-auto">
                     <x-input id="search" class="block ml-1 w-full text-smalt-700 pr-16" type="search" name="search"
-                        :value="old('search')" placeholder="search..." />
+                        :value="$oldSearch ?? ''" placeholder="search..." />
                     <x-button
                         class="absolute right-0.5 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400">
                         <i class='bx bx-search-alt text-xl'></i>
@@ -54,7 +54,7 @@
                                 </small>
                             </td>
                             <td class="p-2">
-                                <a href="{{ $project->link }}" class="hover:text-smalt-400" target="_blank">
+                                <a href="{{ $project->link }}" class="hover:text-smalt-400 break-words" target="_blank">
                                     <small>
                                         {{ $project->link }}
                                     </small>
