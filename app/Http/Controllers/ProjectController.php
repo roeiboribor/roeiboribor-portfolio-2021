@@ -23,6 +23,7 @@ class ProjectController extends Controller
             ->paginate(10);
         return view('projects.index', [
             'projects' => $projects,
+            'oldSearch' => $request->search,
         ]);
     }
 
