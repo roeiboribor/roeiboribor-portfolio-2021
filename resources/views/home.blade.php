@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div id="#portfolio" x-data="{ open: false }"
-        class="relative min-h-screen text-smalt-900 dark:text-gray-100 transition-colors duration-300 bg-gray-200 dark:bg-smalt-900">
+        class="relative min-h-screen text-smalt-900 dark:text-gray-100 transition-colors duration-300 bg-gray-300 dark:bg-smalt-900">
 
         {{-- Navigation --}}
         <header class="fixed inset-x-0 w-full md:px-4 md:pt-4 z-40">
@@ -55,7 +55,7 @@
                 <div class="overlay dark:bg-opacity-30 bg-opacity-40 bg-black rounded-3xl"></div>
             </div>
             <div class="relative container grid grid-cols-12 z-30 pb-16">
-                <div class="col-span-4 hidden lg:block pt-40 pr-4">
+                <div class="col-span-4 hidden lg:block pt-40 px-4">
                     <x-portfolio.profile-card />
                 </div>
                 <div class="col-span-12 lg:col-span-8 px-4 pt-16 md:pt-40 lg:pt-72">
