@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/register', [RegisteredUserController::class, 'create'])
     ->middleware('auth')
     ->name('register');
+
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('auth');
 
