@@ -55,7 +55,7 @@ html {
 }
 
 .nav-list .navlink {
-    @apply text-lg transition duration-300 opacity-50;
+    @apply text-lg transition duration-300 opacity-70;
 }
 
 .nav-list .navitem.active .navlink {
