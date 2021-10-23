@@ -18,7 +18,7 @@
                         </a>
                     </div>
                     <div class="md:hidden flex items-center order-2">
-                        <x-hamburger-menu onclick="toggleSideBar();" />
+                        <x-hamburger-menu />
                     </div>
                     <div class="flex items-center order-1">
                         <div class="relative md:mr-8">
