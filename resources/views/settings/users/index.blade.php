@@ -11,7 +11,7 @@
 
     <div class="container flex items-center justify-center pt-8 animate__animated animate__bounceInDown">
         <div class="dashboard-card w-full relative">
-            <form method="GET" action="{{ route('settings.index') }}">
+            <form method="GET" action="{{ route('settings.users.index') }}">
                 <div class="relative w-4/12 flex items-center mx-auto">
                     <x-input id="search" class="block ml-1 w-full text-smalt-700 pr-16" type="search" name="search"
                         :value="old('search')" placeholder="search..." />
@@ -61,12 +61,12 @@
                             </td>
                             <td class="relative">
                                 <div class="absolute flex items-center justify-evenly inset-0">
-                                    <x-a-button href="{{ route('settings.edit',$user->id) }}"
+                                    <x-a-button href="{{ route('settings.users.edit',$user->id) }}"
                                         class="bg-smalt-200 hover:bg-smalt-100 transform active:scale-95 active:bg-smalt-400 hover:shadow-md shadow">
                                         <i class='bx bx-edit text-xl'></i>
                                     </x-a-button>
                                     <x-button
-                                        @click="showModal = !showModal, id = '{{ route('settings.destroy',$user->id) }}'"
+                                        @click="showModal = !showModal, id = '{{ route('settings.users.destroy',$user->id) }}'"
                                         class="bg-red-500 hover:bg-red-400 transform active:scale-95 active:bg-red-600 hover:shadow-md shadow">
                                         <i class='bx bx-trash text-xl'></i>
                                     </x-button>

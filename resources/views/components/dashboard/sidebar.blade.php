@@ -32,9 +32,13 @@
                     <a href="#delete">Delete</a>
                 </li>
             </x-dashboard.list-item-dropdown>
-            <x-dashboard.list-item :href="route('settings.index')" :icon="__('bx bx-cog')" :title="__('Settings')"
-                :active="request()->routeIs('settings.index')" />
             @endif
+            <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
+                :active="request()->routeIs('settings.profile.edit')">
+                <li>
+                    <a href="{{ route('settings.profile.edit') }}">My Profile</a>
+                </li>
+            </x-dashboard.list-item-dropdown>
         </ul>
     </div>
 </div>

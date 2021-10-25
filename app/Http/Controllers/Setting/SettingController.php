@@ -17,8 +17,8 @@ class SettingController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::where('id', '!=', 1)
-            ->Where('first_name', 'like', '%' . $request->search . '%')
+        $users = User::where('id', '!==', 1)
+            ->orwhere('first_name', 'like', '%' . $request->search . '%')
             ->orWhere('last_name', 'like', '%' . $request->search . '%')
             ->orWhere('email', 'like', '%' . $request->search . '%')
             ->orWhere('role', 'like', '%' . $request->search . '%')

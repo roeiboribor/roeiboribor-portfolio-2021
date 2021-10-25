@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\SettingController;
+use App\Http\Controllers\Setting\ProfileController;
+use App\Http\Controllers\Setting\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,10 @@ Route::middleware(['auth'])->group(function () {
         'projects' => 'slug',
     ]);
 
-    Route::resource('settings', SettingController::class);
+    Route::prefix('settings')->name('settings.')->group(function () {
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::PUT('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    });
 
     Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs');
 });
