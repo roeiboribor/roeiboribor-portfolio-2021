@@ -25,11 +25,6 @@ Route::middleware(['auth'])->group(function () {
         'projects' => 'slug',
     ]);
 
-    Route::prefix('settings')->name('settings.')->group(function () {
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::PUT('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    });
-
     Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs');
 });
 

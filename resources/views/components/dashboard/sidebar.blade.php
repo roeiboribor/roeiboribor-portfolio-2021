@@ -33,10 +33,9 @@
                 </li>
             </x-dashboard.list-item-dropdown>
             @endif
-            <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
-                :active="request()->routeIs('settings.profile.edit')">
+            <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')">
                 <li>
-                    <a href="{{ route('settings.profile.edit') }}">My Profile</a>
+                    <a href="#">My Profile</a>
                 </li>
             </x-dashboard.list-item-dropdown>
         </ul>
