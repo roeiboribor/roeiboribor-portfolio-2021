@@ -14,10 +14,10 @@
             <x-dashboard.list-item :href="route('dashboard')" :icon="__('bx bx-grid-alt')" :title="__('Dashboard')"
                 :active="request()->routeIs('dashboard')" />
             @if (Auth::user()->role == 'super')
-            <x-dashboard.list-item-dropdown :href="route('projects.index')" :icon="__('bx bxs-folder-open')"
-                :title="__('Projects')" :active="request()->routeIs('projects.index')">
+            <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bxs-folder-open')" :title="__('Projects')"
+                :active="request()->routeIs('projects.index')">
                 <li>
-                    <a href="{{ route('projects.create') }}">Add Project</a>
+                    <a href="{{ route('projects.index') }}">All Projects</a>
                 </li>
             </x-dashboard.list-item-dropdown>
             <x-dashboard.list-item-dropdown :href="route('blogs')" :icon="__('bx bxl-blogger')" :title="__('Blogs')"
@@ -33,9 +33,10 @@
                 </li>
             </x-dashboard.list-item-dropdown>
             @endif
-            <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')">
+            <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
+                :active="request()->routeIs('settings.password.create')">
                 <li>
-                    <a href="#">My Profile</a>
+                    <a href=" {{ route('settings.password.create') }}">Change Password</a>
                 </li>
             </x-dashboard.list-item-dropdown>
         </ul>

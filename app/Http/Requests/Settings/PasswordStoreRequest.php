@@ -3,8 +3,9 @@
 namespace App\Http\Requests\Settings;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\Password;
 
-class UserUpdateRequest extends FormRequest
+class PasswordStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +25,13 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email'],
-            'role' => ['required'],
-            'is_active' => ['required'],
+            'new_password' => [
+                'required', Password::min(8)
+                    ->mixedCase()
+                    ->letters()
+                    ->numbers()
+                    ->symbols()
+            ],
         ];
     }
 }
