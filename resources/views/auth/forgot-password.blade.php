@@ -24,7 +24,8 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button class="bg-smalt-200">
+                <x-button
+                    class="ml-3 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400 shadow">
                     {{ __('Email Password Reset Link') }}
                 </x-button>
             </div>

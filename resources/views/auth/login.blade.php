@@ -39,11 +39,12 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button class="ml-3 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400">
+                <x-button
+                    class="ml-3 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400 shadow">
                     {{ __('Log in') }}
                 </x-button>
                 <x-a-button :href="route('home')" class=" ml-3 bg-yellow-500 hover:bg-yellow-400 transform active:scale-95
-                    active:bg-yellow-600">
+                    active:bg-yellow-600 shadow">
                     {{ __('Back') }}
                 </x-a-button>
             </div>
