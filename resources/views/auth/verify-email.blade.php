@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the
+            link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')
@@ -15,7 +16,8 @@
                 @csrf
 
                 <div>
-                    <x-button>
+                    <x-button
+                        class="ml-3 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400 shadow">
                         {{ __('Resend Verification Email') }}
                     </x-button>
                 </div>

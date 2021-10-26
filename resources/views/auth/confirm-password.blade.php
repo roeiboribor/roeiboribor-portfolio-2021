@@ -20,7 +20,8 @@
             </div>
 
             <div class="flex justify-end mt-4">
-                <x-button>
+                <x-button
+                    class="ml-3 bg-smalt-300 hover:bg-smalt-200 transform active:scale-95 active:bg-smalt-400 shadow">
                     {{ __('Confirm') }}
                 </x-button>
             </div>
