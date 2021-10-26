@@ -17,7 +17,7 @@
     @endif
 
     <div class="container flex items-center justify-center pt-8 animate__animated animate__bounceInDown">
-        <div class="dashboard-card w-full">
+        <div class="dashboard-card w-full relative">
             <form method="GET" action="{{ route('projects.index') }}">
                 <div class="relative w-4/12 flex items-center mx-auto">
                     <x-input id="search" class="block ml-1 w-full text-smalt-700 pr-16" type="search" name="search"
@@ -28,6 +28,13 @@
                     </x-button>
                 </div>
             </form>
+
+            <div class="absolute top-4 left-4">
+                <x-a-button href="{{ route('projects.create') }}"
+                    class="bg-green-500 hover:bg-green-400 transform active:scale-95 active:bg-green-600 hover:shadow-md shadow">
+                    <i class='bx bx-edit text-xl mr-3'></i> Add New Project
+                </x-a-button>
+            </div>
 
             <div class="mt-8 mb-4">
                 <table class="table-fixed w-full rounded">
