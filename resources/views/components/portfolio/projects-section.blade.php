@@ -20,7 +20,7 @@
                 @endforeach
             </div>
             <p
-                class="hidden mt-4 text-sm transition duration-500 ease-in-out transform -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 md:line-clamp-5">
+                class="hidden mt-4 px-2 text-sm transition duration-500 ease-in-out transform -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 md:line-clamp-5">
                 {{ $project->description }}
             </p>
             <x-a-button :href="$project->link" target="__blank"
