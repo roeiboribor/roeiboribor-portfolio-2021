@@ -18,9 +18,6 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/test', [PageController::class, 'test'])->name('test');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
-    Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs');
-
     Route::resource('projects', ProjectController::class)->parameters([
         'projects' => 'slug',
     ]);

@@ -20,18 +20,12 @@ class PageController extends Controller
 
         $projects = Project::select('title', 'link', 'image', 'tags', 'description')->get();
 
-        return view('home', [
-            'sections' => $sections,
-            'projects' => $projects,
-        ]);
+        return view('home', compact(['sections', 'projects']));
     }
 
-    public function dashboard()
+    public function test()
     {
-        $users = $this->getDashboardData();
-        return view('dashboard', [
-            'users' => $users,
-        ]);
+        return view('pages.test');
     }
 
     private function getDashboardData()
@@ -44,15 +38,5 @@ class PageController extends Controller
             'agentsCount' => $agentsCount,
         ];
         return $data;
-    }
-
-    public function blogs()
-    {
-        return view('blogs');
-    }
-
-    public function test()
-    {
-        return view('pages.test');
     }
 }
