@@ -24,9 +24,11 @@ class UserFactory extends Factory
     {
         $first_name = $this->faker->firstName();
         $last_name = $this->faker->lastname();
+
         return [
             'first_name' => $first_name,
             'last_name' => $last_name,
+            'username' => strtolower("$first_name.$last_name"),
             'email' => strtolower("$first_name.$last_name@test"),
             'created_by' => '1',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
