@@ -11,12 +11,14 @@
         </div>
         <ul :class="{'overflow-auto': open, 'overflow-visible': !open}"
             class="nav-links h-full whitespace-nowrap scrollbar-hide pt-7 pb-36">
+            @if (Auth::user()->role === 'super')
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bxs-folder-open')" :title="__('Projects')"
                 :active="request()->routeIs('projects.index')">
                 <li>
                     <a href="{{ route('projects.index') }}">All Projects</a>
                 </li>
             </x-dashboard.list-item-dropdown>
+            @endif
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
                 :active="request()->routeIs('settings.password.create')">
                 <li>
