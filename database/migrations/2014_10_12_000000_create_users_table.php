@@ -17,8 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->enum('role',['super','admin','tl','qa','sme','agent'])->default('agent');
+            $table->enum('role', ['super', 'admin', 'manager', 'supplier', 'customer'])->default('agent');
             $table->boolean('is_active')->default(true);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
