@@ -15,7 +15,7 @@ class ProjectController extends Controller
 
     public function __construct()
     {
-        $this->prefix = 'Super.';
+        $this->prefix = 'super.';
     }
     /**
      * Display a listing of the resource.
