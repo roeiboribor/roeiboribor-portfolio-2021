@@ -10,7 +10,7 @@
                 </div>
                 <x-portfolio.navbar>
                     <div class="flex">
-                        <a href="{{ route('projects.index') }}" class="flex items-center py-2 md:py-4">
+                        <a href="{{ route('login') }}" class="flex items-center py-2 md:py-4">
                             <img src="{{ asset('assets/img/portfolio/logo.png') }}" alt="Logo" class="h-8 w-8 mr-2">
                             <span class="font-bold text-2xl hidden md:block">
                                 My<span class="text-smalt-100">Portfolio</span>
