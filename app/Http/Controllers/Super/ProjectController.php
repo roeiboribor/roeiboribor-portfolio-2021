@@ -11,6 +11,12 @@ use Illuminate\Support\Carbon;
 
 class ProjectController extends Controller
 {
+    protected $prefix;
+
+    public function __construct()
+    {
+        $this->prefix = 'Super.';
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +28,7 @@ class ProjectController extends Controller
             ->orWhere('tags', 'like', '%' . $request->search . '%')
             ->orWhere('link', 'like', '%' . $request->search . '%')
             ->paginate(10);
-        return view('projects.index', [
+        return view($this->prefix . 'projects.index', [
             'projects' => $projects,
             'oldSearch' => $request->search,
         ]);
@@ -35,7 +41,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        return view($this->prefix . 'projects.create');
     }
 
     /**
@@ -76,7 +82,7 @@ class ProjectController extends Controller
     public function edit($slug)
     {
         $project = Project::where('slug', $slug)->first();
-        return view('projects.edit', [
+        return view($this->prefix . 'projects.edit', [
             'project' => $project
         ]);
     }

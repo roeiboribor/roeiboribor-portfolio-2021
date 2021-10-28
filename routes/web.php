@@ -31,7 +31,9 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::group(['prefix' => 'supplier'], function () {
-        Route::get('/dashboard', 'PageController@dashboard');
+        Route::get('/dashboard', function () {
+            return "Supplier";
+        });
     });
 
     Route::group(['prefix' => 'customer'], function () {
