@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended($this->redirectTo());
     }
 
     /**
@@ -50,5 +50,30 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    private function redirectTo()
+    {
+        $role = Auth::user()->role;
+
+        switch ($role) {
+            case "super":
+                return '/super/projects';
+                break;
+            case "admin":
+                return '/admin/dashboard';
+                break;
+            case "manager":
+                return '/manager/dashboard';
+                break;
+            case "supplier":
+                return '/supplier/dashboard';
+                break;
+            case "customer":
+                return '/customer/dashboard';
+                break;
+            default:
+                return '/dashboard';
+        }
     }
 }

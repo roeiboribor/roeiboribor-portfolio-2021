@@ -23,6 +23,11 @@ class PageController extends Controller
         return view('home', compact(['sections', 'projects']));
     }
 
+    public function dashboard()
+    {
+        return view('dashboard.dashboard');
+    }
+
     public function test()
     {
         return view('pages.test');

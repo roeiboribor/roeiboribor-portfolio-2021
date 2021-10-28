@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class EnsureUserHasRole
+class IsSuperMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->role == 'super') {
+        if (auth()->user()->role == "super") {
             return $next($request);
         }
 
