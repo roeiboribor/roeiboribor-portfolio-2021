@@ -27,16 +27,4 @@ class PageController extends Controller
     {
         return view('pages.test');
     }
-
-    private function getDashboardData()
-    {
-        $data = [];
-        $usersCount = User::get()->count();
-        $agentsCount = User::where('role', 'agent')->get()->count();
-        $data = [
-            'usersCount' => $usersCount,
-            'agentsCount' => $agentsCount,
-        ];
-        return $data;
-    }
 }
