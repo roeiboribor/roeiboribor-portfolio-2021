@@ -24,21 +24,21 @@ Route::middleware(['auth'])->group(function () {
         ]);
     });
 
-    Route::group(['prefix' => 'manager'], function () {
+    Route::group(['prefix' => 'manager', 'middleware' => ['manager']], function () {
         Route::get('/dashboard', function () {
-            return "Manager";
+            return view('manager.dashboard');
         });
     });
 
-    Route::group(['prefix' => 'supplier'], function () {
+    Route::group(['prefix' => 'supplier', 'middleware' => ['supplier']], function () {
         Route::get('/dashboard', function () {
-            return "Supplier";
+            return view('supplier.dashboard');
         });
     });
 
-    Route::group(['prefix' => 'customer'], function () {
+    Route::group(['prefix' => 'customer', 'middleware' => ['customer']], function () {
         Route::get('/dashboard', function () {
-            return "Customer";
+            return view('customer.dashboard');
         });
     });
 
