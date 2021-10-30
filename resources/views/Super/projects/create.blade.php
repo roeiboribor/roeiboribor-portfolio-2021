@@ -43,10 +43,8 @@
 
                         <div class="mt-3">
                             <x-label for="tags" :value="__('Tags')" />
-                            {{-- tagsToArray($event.target.value) --}}
-                            <x-input @keydown="$event.key === ',' ? tagsToArray($event.target.value) : ''"
-                                @keyup.backspace="tagsToArray($event.target.value)" id="tags"
-                                class="block mt-1 w-full text-smalt-700" type="text" name="tags" :value="old('tags')"
+                            <x-input onkeyup="tagsToArray(event)" id="tags" class="block mt-1 w-full text-smalt-700"
+                                type="text" name="tags" :value="old('tags')"
                                 placeholder="ex. HTML, CSS, JavaScirpt, ..." required />
                             <div class="tags-container mt-2 px-0.5 space-x-0.5">
                             </div>
@@ -95,7 +93,7 @@
             let imageDisplay = document.querySelector('.image-display');
 
             const tagsToArray = (el) => {
-                let wordTags = el.split(', ');
+                let wordTags = el.target.value.split(', ');
                 tagsContainer.innerHTML = null;
                 wordTags.forEach(wordTag => {
                     if (wordTag !== '') {
