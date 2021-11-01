@@ -118,7 +118,7 @@ class ProjectController extends Controller
             ]);
 
             return redirect()->route('projects.edit', $request->slug)->with('status', 'success');
-        } catch (\Throwable $th) {
+        } catch (Exception $err) {
             return back()->with('status', 'error');
         }
     }
@@ -136,7 +136,7 @@ class ProjectController extends Controller
             unlink('assets/img/portfolio/projects/' . $project->image);
             $project->delete();
             return back()->with('status', 'success');
-        } catch (\Throwable $th) {
+        } catch (Exception $err) {
             return back()->with('status', 'error');
         }
     }
