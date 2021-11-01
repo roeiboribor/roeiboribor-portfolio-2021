@@ -11,6 +11,25 @@
         </div>
         <ul :class="{'overflow-auto': open, 'overflow-visible': !open}"
             class="nav-links h-full whitespace-nowrap scrollbar-hide pt-7 pb-36">
+            {{-- MANAGERS --}}
+            @if (Auth::user()->role === 'manager')
+            <x-dashboard.list-item :href="route('manager.dashboard')" :icon="__('bx bxs-dashboard')"
+                :title="__('Dashboard')" :active="request()->routeIs('dashboard')">
+            </x-dashboard.list-item>
+            @endif
+            {{-- SUPPLIERS --}}
+            @if (Auth::user()->role === 'supplier')
+            <x-dashboard.list-item :href="route('supplier.dashboard')" :icon="__('bx bxs-dashboard')"
+                :title="__('Dashboard')" :active="request()->routeIs('supplier.dashboard')">
+            </x-dashboard.list-item>
+            @endif
+            {{-- CUSTOMERS --}}
+            @if (Auth::user()->role === 'customer')
+            <x-dashboard.list-item :href="route('customer.dashboard')" :icon="__('bx bxs-dashboard')"
+                :title="__('Dashboard')" :active="request()->routeIs('customer.dashboard')">
+            </x-dashboard.list-item>
+            @endif
+            {{-- SUPER --}}
             @if (Auth::user()->role === 'super')
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bxs-folder-open')" :title="__('Projects')"
                 :active="request()->routeIs('projects.index')">
@@ -19,6 +38,16 @@
                 </li>
             </x-dashboard.list-item-dropdown>
             @endif
+            {{-- OPEN FOR ALL --}}
+            <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-store-alt')" :title="__('Products')"
+                :active="null">
+                <li>
+                    <a href="{{ route('products.index') }}">All Products</a>
+                </li>
+                <li>
+                    <a href="{{ route('products.create') }}">Add Products</a>
+                </li>
+            </x-dashboard.list-item-dropdown>
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
                 :active="request()->routeIs('settings.password.create')">
                 <li>
