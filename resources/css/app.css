@@ -113,19 +113,19 @@ html {
     @apply overflow-visible;
 }
 .sidebar .nav-links li {
-    @apply relative transition-colors duration-500 ease-in-out hover:bg-gray-300 dark:hover:bg-gray-800 select-none;
+    @apply relative cursor-pointer transition-colors duration-500 ease-in-out hover:bg-gray-300 dark:hover:bg-gray-800 select-none;
 }
 .sidebar .nav-links li .icon-link {
     @apply flex items-center justify-between;
 }
 .sidebar.close .nav-links li .icon-link {
-    @apply block;
+    @apply block pointer-events-none;
 }
 .sidebar .nav-links li i {
-    @apply h-14 text-center place-items-center leading-loose cursor-pointer transition-all duration-300 ease-in-out;
+    @apply h-14 text-center transform origin-center leading-loose cursor-pointer transition-all duration-300 ease-in-out;
 }
 .sidebar .nav-links li.showMenu i.arrow {
-    @apply transform -rotate-180;
+    @apply transform rotate-90;
 }
 .sidebar.close .nav-links li i.arrow {
     @apply hidden;
