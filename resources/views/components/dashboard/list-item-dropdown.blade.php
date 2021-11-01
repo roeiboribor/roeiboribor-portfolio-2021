@@ -12,7 +12,7 @@ $classes = ($active ?? false)
             <i class="{{  $icon  }} w-20 text-2xl"></i>
             <span class="link_name">{{ $title }}</span>
         </a>
-        <i class="bx bxs-chevron-down arrow w-12 text-xl"></i>
+        <i class="bx bxs-chevron-right arrow w-12 text-xl"></i>
     </div>
     <ul class="sub-menu">
         <li>
