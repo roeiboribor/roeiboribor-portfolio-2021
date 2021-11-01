@@ -148,7 +148,7 @@ class ProductController extends Controller
             $product = Product::firstWhere('slug', $slug);
             $product->delete();
             return back()->with('status', 'success');
-        } catch (\Throwable $th) {
+        } catch (Exception $err) {
             return back()->with('status', 'error');
         }
     }
