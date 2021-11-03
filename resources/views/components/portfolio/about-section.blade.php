@@ -7,11 +7,10 @@
         <blockquote class="p-2 md:p-4 tracking-wide text-center">
             Hi! I'm a self-taught PHP Developer with a 1+ year hands on experience of building web application using
             PHP. My
-            experience as a self-taught involves building scalable server side web apps using framework like Laravel and
+            experience as a self-taught involves building scalable server side web app using framework like Laravel and
             uses
-            version control like GitHub to upload my local projects. I have an advance knowledge
-            when creating Login Forms, Inventory System, API & Cloning web apps. I also have basic hands on experience
-            using NPM,
+            version control tool like GitHub to document my local projects. I have an advance knowledge
+            in Login Forms, Inventory System, API & Cloning web apps. I also use NPM,
             Artisan commands, FileZilla, Putty & CLI commands.
         </blockquote>
         <i class='bx bxs-quote-right text-2xl text-smalt-200'></i>
