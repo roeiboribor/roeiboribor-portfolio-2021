@@ -87,12 +87,12 @@
                                 <div class="absolute flex items-center justify-evenly inset-0">
                                     <x-a-button href="{{ route('products.edit',$product->slug) }}"
                                         class="bg-smalt-200 hover:bg-smalt-100 transform active:scale-95 active:bg-smalt-400 hover:shadow-md shadow">
-                                        <i class='bx bx-edit text-xl'></i>
+                                        <i class='bx bx-edit text-lg'></i>
                                     </x-a-button>
                                     <x-button
                                         @click="showModal = !showModal, slug = '{{ route('products.destroy',$product->slug) }}'"
                                         class="bg-red-500 hover:bg-red-400 transform active:scale-95 active:bg-red-600 hover:shadow-md shadow">
-                                        <i class='bx bx-trash text-xl'></i>
+                                        <i class='bx bx-trash text-lg'></i>
                                     </x-button>
                                 </div>
                             </td>

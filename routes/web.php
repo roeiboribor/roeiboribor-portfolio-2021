@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Inventory\OrderController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Inventory\ProductController;
 use App\Http\Controllers\Setting\PasswordController;
 use App\Http\Controllers\Super\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/products/{slug}/edit', [ProductController::class, 'edit'])->name('products.edit');
     Route::put('/products/{slug}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{slug}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+    Route::get('/orders', [OrderController::class, 'index']);
 
     Route::get('/settings/password/create', [PasswordController::class, 'create'])->name('settings.password.create');
     Route::post('/settings/password/', [PasswordController::class, 'store'])->name('settings.password.store');
