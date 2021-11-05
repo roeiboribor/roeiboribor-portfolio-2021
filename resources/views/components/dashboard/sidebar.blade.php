@@ -47,6 +47,9 @@
                 <li>
                     <a href="{{ route('products.create') }}">Add Products</a>
                 </li>
+                <li>
+                    <a href="#">Purchase Products</a>
+                </li>
             </x-dashboard.list-item-dropdown>
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
                 :active="request()->routeIs('settings.password.create')">
