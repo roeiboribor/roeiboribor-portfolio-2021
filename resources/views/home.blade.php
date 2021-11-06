@@ -105,6 +105,9 @@
             const projectorDesc = document.querySelector('.projector .description');
 
             const navitems = document.querySelectorAll('.nav-list .navitem');
+            const homeCards = document.querySelectorAll('#home .cards-container .relative');
+            const servicesRight = document.querySelectorAll('.services .grid .order-1');
+            const servicesLeft = document.querySelectorAll('.services .grid .order-2');
             const badges = document.querySelectorAll('.badge');
             
             main.style.paddingTop = `${header.clientHeight}px`;
@@ -120,10 +123,56 @@
                 })
             });
 
+            ScrollReveal().reveal('.about', {
+                origin : 'right',
+                delay : 200,
+                distance : '120px',
+                easing : 'ease-in-out',
+                reset: true
+            });
+
+            ScrollReveal().reveal('.welcome-title', {
+                origin : 'top',
+                delay : 200,
+                distance : '120px',
+                easing : 'ease-in-out',
+                reset: true
+            });
+
+            ScrollReveal().reveal(servicesRight, {
+                origin : 'right',
+                delay : 200,
+                distance : '120px',
+                easing : 'ease-in-out',
+                reset: true
+            });
+
+            ScrollReveal().reveal(servicesLeft, {
+                origin : 'left',
+                delay : 200,
+                distance : '120px',
+                easing : 'ease-in-out',
+                reset: true
+            });
+
+            ScrollReveal().reveal(homeCards, {
+                delay : 100,
+                interval: 100,
+                scale: 0.85,
+                reset: true
+            });
+
+            ScrollReveal().reveal('.project', {
+                delay : 100,
+                interval: 200,
+                scale: 0.85,
+                reset: true
+            });
+
             function toggleExpand(element) {
                 element.classList.toggle('line-clamp-3');
             }
-
+            
             function removeActiveClass(elements) {
                 elements.forEach(element => {
                     element.classList.remove('active');

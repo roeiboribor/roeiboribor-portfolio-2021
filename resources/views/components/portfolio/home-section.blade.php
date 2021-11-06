@@ -12,7 +12,7 @@
         </span>
     </a>
 </div>
-<h1 class="mb-40 text-gray-100 text-5xl lg:text-7xl text-center lg:text-left font-extrabold lg:w-5/6">
+<h1 class="welcome-title mb-40 text-gray-100 text-5xl lg:text-7xl text-center lg:text-left font-extrabold lg:w-5/6">
     Explore My
     Personal Realm!
 </h1>

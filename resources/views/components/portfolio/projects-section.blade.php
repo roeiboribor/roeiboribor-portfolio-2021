@@ -2,7 +2,7 @@
 <div class="grid grid-cols-2">
     @foreach ($projects as $project)
     <div
-        class="relative shadow-lg col-span-2 md:col-span-1 cursor-pointer group overflow-hidden bg-white dark:bg-smalt-900">
+        class="project relative shadow-lg col-span-2 md:col-span-1 cursor-pointer group overflow-hidden bg-white dark:bg-smalt-900">
         <img class="relative transform duration-300 group-hover:scale-150 group-hover:opacity-0 object-cover h-full"
             src="{{ asset('assets/img/portfolio/projects/'.$project->image) }}"
             alt="{{ $project->title.' Screenshot' }}">
