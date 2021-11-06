@@ -74,6 +74,7 @@
                                 required autofocus />
                             <span class="absolute bottom-2 left-4 text-smalt-700 text-xl font-bold">₱</span>
                         </div>
+                        @if (Auth::user()->role == "super")
                         <div class="mt-2 relative">
                             <x-label for="sellingPrice" :value="__('Selling Price')" />
                             <x-input onkeypress="return isDecimalInput(this, event);" id="sellingPrice"
@@ -82,6 +83,7 @@
                                 required autofocus />
                             <span class="absolute bottom-2 left-4 text-smalt-700 text-xl font-bold">₱</span>
                         </div>
+                        @endif
 
                         <div class="mt-2">
                             <x-label for="quantity" :value="__('Quantity')" />

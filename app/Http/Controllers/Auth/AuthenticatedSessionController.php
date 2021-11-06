@@ -74,6 +74,7 @@ class AuthenticatedSessionController extends Controller
                 break;
             default:
                 return '/dashboard';
+                break;
         }
     }
 }

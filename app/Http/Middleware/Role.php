@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class IsSuperMiddleware
+class Role
 {
     /**
      * Handle an incoming request.
@@ -14,9 +15,10 @@ class IsSuperMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, ...$roles)
     {
-        if (auth()->user()->role == "super") {
+        $user = Auth::user();
+        if (in_array($user->role, $roles)) {
             return $next($request);
         }
 

@@ -52,6 +52,7 @@ class RedirectIfAuthenticated
                 break;
             default:
                 return '/dashboard';
+                break;
         }
     }
 }

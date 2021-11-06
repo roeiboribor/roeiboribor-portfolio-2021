@@ -45,9 +45,13 @@
                             <th class="border-r-2 w-4/12">Category</th>
                             <th class="border-r-2 w-full">Description</th>
                             <th class="border-r-2 w-3/12">Product Price</th>
+                            @if (Auth::user()->role == "super")
                             <th class="border-r-2 w-3/12">Selling Price</th>
+                            @endif
                             <th class="border-r-2 w-3/12">Quantity</th>
+                            @if (Auth::user()->role == "super")
                             <th class="w-4/12">Manage</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -73,16 +77,19 @@
                                     {{ $product->product_price }}
                                 </small>
                             </td>
+                            @if (Auth::user()->role == "super")
                             <td class="p-2 text-center">
                                 <small>
                                     {{ $product->selling_price }}
                                 </small>
                             </td>
+                            @endif
                             <td class="p-2 text-center">
                                 <small>
                                     {{ $product->quantity }}
                                 </small>
                             </td>
+                            @if (Auth::user()->role == "super")
                             <td class="relative">
                                 <div class="absolute flex items-center justify-evenly inset-0">
                                     <x-a-button href="{{ route('products.edit',$product->slug) }}"
@@ -96,6 +103,7 @@
                                     </x-button>
                                 </div>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>
