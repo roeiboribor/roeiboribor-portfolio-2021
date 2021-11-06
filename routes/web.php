@@ -19,27 +19,30 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/test', [PageController::class, 'test'])->name('test');
 
 Route::middleware(['auth'])->group(function () {
-    Route::group(['prefix' => 'super', 'middleware' => ['role:super']], function () {
-        Route::resource('projects', ProjectController::class)->parameters([
-            'projects' => 'slug',
-        ]);
+
+    Route::view('/manager/dashboard', 'manager.dashboard')->name('manager.dashboard');
+    Route::view('/supplier/dashboard', 'supplier.dashboard')->name('supplier.dashboard');
+    Route::view('/customer/dashboard', 'customer.dashboard')->name('customer.dashboard');
+
+    Route::get('/products', [ProductController::class, 'index'])->name('products.index')->middleware('role:super,supplier');
+
+    Route::group(['middleware' => 'role:super'], function () {
+
+        Route::group(['prefix' => 'super'], function () {
+            Route::resource('projects', ProjectController::class)->parameters([
+                'projects' => 'slug',
+            ]);
+        });
+
+        Route::get('/products/{slug}/edit', [ProductController::class, 'edit'])->name('products.edit');
+        Route::put('/products/{slug}', [ProductController::class, 'update'])->name('products.update');
+        Route::delete('/products/{slug}', [ProductController::class, 'destroy'])->name('products.destroy');
     });
 
-    Route::group(['prefix' => 'manager', 'middleware' => ['role:manager']], function () {
-        Route::view('/dashboard', 'manager.dashboard')->name('manager.dashboard');
+    Route::group(['middleware' => 'role:supplier'], function () {
+        Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+        Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     });
-
-    Route::group(['prefix' => 'supplier', 'middleware' => ['role:supplier']], function () {
-        Route::view('/dashboard', 'supplier.dashboard')->name('supplier.dashboard');
-    });
-
-    Route::group(['prefix' => 'customer', 'middleware' => ['role:customer']], function () {
-        Route::view('/dashboard', 'customer.dashboard')->name('customer.dashboard');
-    });
-
-    Route::resource('products', ProductController::class)->parameters([
-        'products' => 'slug',
-    ])->middleware('role:super,supplier');
 
     Route::get('/settings/password/create', [PasswordController::class, 'create'])->name('settings.password.create');
     Route::post('/settings/password/', [PasswordController::class, 'store'])->name('settings.password.store');

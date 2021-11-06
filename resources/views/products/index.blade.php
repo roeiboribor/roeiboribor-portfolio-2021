@@ -31,10 +31,12 @@
             </form>
 
             <div class="absolute top-4 left-4">
+                @if (Auth::user()->role == "supplier")
                 <x-a-button href="{{ route('products.create') }}"
                     class="bg-green-500 hover:bg-green-400 transform active:scale-95 active:bg-green-600 hover:shadow-md shadow">
                     <i class='bx bx-edit text-xl mr-3'></i> Add New Product
                 </x-a-button>
+                @endif
             </div>
 
             <div class="mt-8 mb-4">
