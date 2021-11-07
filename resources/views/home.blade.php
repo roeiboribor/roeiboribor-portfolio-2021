@@ -134,8 +134,16 @@
             ScrollReveal().reveal('.welcome-title', {
                 origin : 'top',
                 delay : 200,
-                distance : '120px',
+                duration: 1000,
+                distance : '60px',
                 easing : 'ease-in-out',
+                reset: true
+            });
+
+            ScrollReveal().reveal('.project', {
+                delay : 100,
+                interval: 200,
+                scale: 0.85,
                 reset: true
             });
 
@@ -158,13 +166,6 @@
             ScrollReveal().reveal(homeCards, {
                 delay : 100,
                 interval: 100,
-                scale: 0.85,
-                reset: true
-            });
-
-            ScrollReveal().reveal('.project', {
-                delay : 100,
-                interval: 200,
                 scale: 0.85,
                 reset: true
             });
