@@ -58,9 +58,13 @@
                 <div class="col-span-4 hidden lg:block pt-40 px-4">
                     <x-portfolio.profile-card />
                 </div>
-                <div class="col-span-12 lg:col-span-8 px-4 pt-16 md:pt-40 lg:pt-72">
+                <div class="overflow-x-hidden col-span-12 lg:col-span-8 px-4 pt-16 md:pt-40 lg:pt-72">
                     <section id="home" class="home relative mb-8 pt-4">
                         <x-portfolio.home-section :projects="$projects" />
+                        {{-- Music --}}
+                        {{-- <audio class="absolute" controls>
+                            <source src="{{ asset('assets/music/Romantic-Sunday.mp3') }}" type="audio/mpeg">
+                        </audio> --}}
                     </section>
                     @foreach ($sections as $section)
                     <div id="{{ $section }}" class="py-8">

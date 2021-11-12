@@ -33,7 +33,8 @@
                         <span class="badge animate__animated">CSS</span>
                         <span class="badge animate__animated">JavaScript</span>
                         <span class="badge animate__animated">jQuery</span>
-                        <span class="badge animate__animated">Vue3</span>
+                        <span class="badge animate__animated">Vue Js</span>
+                        <span class="badge animate__animated">WordPress</span>
                         <span class="badge animate__animated">Bootstrap</span>
                         <span class="badge animate__animated">Tailwind</span>
                         <span class="badge animate__animated">Sass/Scss</span>

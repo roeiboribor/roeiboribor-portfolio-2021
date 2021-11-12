@@ -59,34 +59,34 @@
                     <tbody>
                         @foreach ($products as $product)
                         <tr class="border-b-2 h-14">
-                            <td class="p-2 text-center">
+                            <td class="text-center">
                                 <small>
                                     {{ $product->product_name }}
                                 </small>
                             </td>
-                            <td class="p-2 text-center">
+                            <td class="text-center">
                                 <small>
                                     {{ $product->category }}
                                 </small>
                             </td>
-                            <td class="p-2 text-center">
+                            <td class="text-center">
                                 <small @click="toggleExpand($event.target)" class="cursor-pointer line-clamp-3">
                                     {{ $product->description }}
                                 </small>
                             </td>
-                            <td class="p-2 text-center">
+                            <td class="text-center">
                                 <small>
                                     {{ $product->product_price }}
                                 </small>
                             </td>
                             @if (Auth::user()->role == "super")
-                            <td class="p-2 text-center">
+                            <td class="text-center">
                                 <small>
                                     {{ $product->selling_price }}
                                 </small>
                             </td>
                             @endif
-                            <td class="p-2 text-center">
+                            <td class="text-center">
                                 <small>
                                     {{ $product->quantity }}
                                 </small>
