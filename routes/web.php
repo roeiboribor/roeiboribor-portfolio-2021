@@ -21,6 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('projects', ProjectController::class)->parameters([
         'projects' => 'slug',
     ]);
+
     Route::resource('blogs', BlogController::class)->parameters([
         'blogs' => 'slug',
     ]);
