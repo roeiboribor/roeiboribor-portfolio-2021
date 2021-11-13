@@ -4,7 +4,7 @@
             <img class="mx-auto mb-3 h-30 filter drop-shadow-lg bg-gradient-01 border-4 border-white rounded-full"
                 src="{{ asset('assets/img/portfolio/avatar.png') }}" alt="facebook avatar">
             <h3 class="text-2xl font-bold">Roei Boribor</h3>
-            <h4 class="text-md tracking-wider">I'M PHP DEVELOPER</h4>
+            <h4 class="profile-card-role text-md tracking-wider">I'M PHP DEVELOPER</h4>
         </div>
         <div class="card-body">
             <div class="line-dotted mx-8 my-2"></div>

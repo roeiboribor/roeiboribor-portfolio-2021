@@ -22,3 +22,7 @@ It inspires me to use gradient neon shadow effects to showcase the innovative lo
 -   Owl Carousel
 -   jQuery
 -   Alpine.js
+
+## CDN used:
+
+-   https://www.npmjs.com/package/typewriter-effect

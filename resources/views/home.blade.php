@@ -61,10 +61,6 @@
                 <div class="overflow-x-hidden col-span-12 lg:col-span-8 px-4 pt-16 md:pt-40 lg:pt-72">
                     <section id="home" class="home relative mb-8 pt-4">
                         <x-portfolio.home-section :projects="$projects" />
-                        {{-- Music --}}
-                        {{-- <audio class="absolute" controls>
-                            <source src="{{ asset('assets/music/Romantic-Sunday.mp3') }}" type="audio/mpeg">
-                        </audio> --}}
                     </section>
                     @foreach ($sections as $section)
                     <div id="{{ $section }}" class="py-8">
@@ -107,6 +103,7 @@
             const main = document.querySelector('main');
             const profileCard = document.querySelector('.profile-card');
             const projectorDesc = document.querySelector('.projector .description');
+            const profileCardRole = document.querySelector('.profile-card .profile-card-role');
 
             const navitems = document.querySelectorAll('.nav-list .navitem');
             const homeCards = document.querySelectorAll('#home .cards-container .relative');
@@ -126,6 +123,17 @@
                     navitem.classList.add('active');
                 })
             });
+
+            var typewriter = new Typewriter(profileCardRole, {
+                loop: true,
+                delay: 75,
+            });
+
+            typewriter
+            .pauseFor(1500)
+            .typeString(`I'M PHP DEVELOPER`)
+            .pauseFor(3500)
+            .start();
 
             ScrollReveal().reveal('.about', {
                 origin : 'right',
