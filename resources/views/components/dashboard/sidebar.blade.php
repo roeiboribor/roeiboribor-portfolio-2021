@@ -43,12 +43,15 @@
                     <a href="{{ route('projects.index') }}">All Projects</a>
                 </li>
             </x-dashboard.list-item-dropdown>
-            <x-dashboard.list-item :href="route('products.index')" :icon="__('bx bx-store-alt')" :title="__('Products')"
-                :active="request()->routeIs('products.index')">
+            <x-dashboard.list-item :href="route('products.index')" :icon="__('bx bx-store-alt')"
+                :title="__('List of Products')" :active="request()->routeIs('products.index')">
             </x-dashboard.list-item>
             @endif
 
             {{-- OPEN FOR ALL --}}
+            <x-dashboard.list-item :href="route('purchases.index')" :icon="__('bx bx-shopping-bag')" :title="__('Shop')"
+                :active="request()->routeIs('purchases.index')">
+            </x-dashboard.list-item>
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
                 :active="request()->routeIs('settings.password.create')">
                 <li>
