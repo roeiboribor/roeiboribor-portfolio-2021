@@ -12,6 +12,9 @@
         </h3>
         <ul class="md:w-3/5 mx-auto list-disc list-inside">
             <li>
+                WordPress
+            </li>
+            <li>
                 Responsive designs
             </li>
             <li>
