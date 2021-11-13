@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Super;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Projects\ProjectStoreRequest;
@@ -11,12 +11,6 @@ use Illuminate\Support\Carbon;
 
 class ProjectController extends Controller
 {
-    protected $prefix;
-
-    public function __construct()
-    {
-        $this->prefix = 'super.';
-    }
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +22,7 @@ class ProjectController extends Controller
             ->orWhere('tags', 'like', '%' . $request->search . '%')
             ->orWhere('link', 'like', '%' . $request->search . '%')
             ->paginate(10);
-        return view($this->prefix . 'projects.index', [
+        return view('projects.index', [
             'projects' => $projects,
             'oldSearch' => $request->search,
         ]);
@@ -41,7 +35,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view($this->prefix . 'projects.create');
+        return view('projects.create');
     }
 
     /**
@@ -82,7 +76,7 @@ class ProjectController extends Controller
     public function edit($slug)
     {
         $project = Project::where('slug', $slug)->first();
-        return view($this->prefix . 'projects.edit', [
+        return view('projects.edit', [
             'project' => $project
         ]);
     }

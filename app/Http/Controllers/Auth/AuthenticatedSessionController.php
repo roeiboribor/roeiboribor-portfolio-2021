@@ -58,7 +58,7 @@ class AuthenticatedSessionController extends Controller
 
         switch ($role) {
             case "super":
-                return '/super/projects';
+                return '/projects';
                 break;
             case "admin":
                 return '/admin/dashboard';
