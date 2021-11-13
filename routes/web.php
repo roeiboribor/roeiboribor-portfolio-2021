@@ -28,7 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/products', [ProductController::class, 'index'])->name('products.index')->middleware('role:super,supplier');
     Route::get('/purchase', [PurchaseController::class, 'index'])->name('purchases.index');
 
-    // ----- OWNER SUPER ROLE ------ //
+    // ----- ROLE: Super ------ //
     Route::group(['middleware' => 'role:super'], function () {
 
         Route::group(['prefix' => 'super'], function () {
@@ -42,7 +42,7 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/products/{slug}', [ProductController::class, 'destroy'])->name('products.destroy');
     });
 
-    // ----- SUPPLIER ROLE ------ //
+    // ----- ROLE: Supplier ------ //
     Route::group(['middleware' => 'role:supplier'], function () {
         Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
         Route::post('/products', [ProductController::class, 'store'])->name('products.store');
