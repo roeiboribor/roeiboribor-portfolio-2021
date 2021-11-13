@@ -23,9 +23,6 @@
             <x-dashboard.list-item :href="route('supplier.dashboard')" :icon="__('bx bxs-dashboard')"
                 :title="__('Dashboard')" :active="request()->routeIs('supplier.dashboard')">
             </x-dashboard.list-item>
-            <x-dashboard.list-item :href="route('products.index')" :icon="__('bx bx-store-alt')" :title="__('Products')"
-                :active="request()->routeIs('products.index')">
-            </x-dashboard.list-item>
             @endif
 
             {{-- CUSTOMERS --}}
@@ -43,8 +40,12 @@
                     <a href="{{ route('projects.index') }}">All Projects</a>
                 </li>
             </x-dashboard.list-item-dropdown>
+            @endif
+
+            {{-- MUTIPLE ROLES --}}
+            @if (Auth::user()->role == "super" || Auth::user()->role == "supplier")
             <x-dashboard.list-item :href="route('products.index')" :icon="__('bx bx-store-alt')"
-                :title="__('List of Products')" :active="request()->routeIs('products.index')">
+                :title="__('Product List')" :active="request()->routeIs('products.index')">
             </x-dashboard.list-item>
             @endif
 
