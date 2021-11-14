@@ -23,6 +23,8 @@ It inspires me to use gradient neon shadow effects to showcase the innovative lo
 -   jQuery
 -   Alpine.js
 
-## CDN used:
+## CDN / Links used:
 
 -   https://www.npmjs.com/package/typewriter-effect
+-   https://artisansweb.net/how-to-create-a-blog-with-laravel/
+-   https://github.com/austintoddj/canvas
