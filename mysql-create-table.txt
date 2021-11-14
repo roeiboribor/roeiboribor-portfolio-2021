@@ -1,0 +1,12 @@
+// CREATE TABLE WITH FOREIGN KEY
+CREATE TABLE post_details ( 
+    id bigInt(20) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    post_id bigInt(20) UNSIGNED NOT NULL, 
+    sequence int, 
+    post_detail text, 
+    created_at timestamp NULL, 
+    updated_at timestamp NULL, 
+    CONSTRAINT `post_details_post_id_foreign` 
+    FOREIGN KEY (`post_id`) REFERENCES posts(id) 
+    ON UPDATE RESTRICT ON DELETE RESTRICT 
+);
