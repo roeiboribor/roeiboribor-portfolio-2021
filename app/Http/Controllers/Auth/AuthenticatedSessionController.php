@@ -52,25 +52,18 @@ class AuthenticatedSessionController extends Controller
         return redirect('/');
     }
 
+    /**
+     * This is connected to RedirectIfAuthenticated Middleware
+     *
+     * @return void
+     */
     private function redirectTo()
     {
         $role = Auth::user()->role;
 
         switch ($role) {
             case "super":
-                return '/projects';
-                break;
-            case "admin":
-                return '/admin/dashboard';
-                break;
-            case "manager":
-                return '/manager/dashboard';
-                break;
-            case "supplier":
-                return '/supplier/dashboard';
-                break;
-            case "customer":
-                return '/customer/dashboard';
+                return '/dashboard';
                 break;
             default:
                 return '/dashboard';

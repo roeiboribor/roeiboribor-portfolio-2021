@@ -30,25 +30,19 @@ class RedirectIfAuthenticated
         return $next($request);
     }
 
+
+    /**
+     * This is connected to AuthenticatedSessionController
+     *
+     * @return void
+     */
     private function redirectTo()
     {
         $role = auth()->user()->role;
 
         switch ($role) {
             case "super":
-                return '/super/projects';
-                break;
-            case "admin":
-                return '/admin/dashboard';
-                break;
-            case "manager":
-                return '/manager/dashboard';
-                break;
-            case "supplier":
-                return '/supplier/dashboard';
-                break;
-            case "customer":
-                return '/customer/dashboard';
+                return '/dashboard';
                 break;
             default:
                 return '/dashboard';
