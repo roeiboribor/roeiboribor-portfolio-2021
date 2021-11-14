@@ -27,4 +27,9 @@ class PageController extends Controller
     {
         return view('pages.test');
     }
+
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
 }

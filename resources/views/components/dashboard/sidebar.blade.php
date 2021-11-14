@@ -12,6 +12,9 @@
         <ul :class="{'overflow-auto': open, 'overflow-visible': !open}"
             class="nav-links h-full whitespace-nowrap scrollbar-hide pt-7 pb-36">
 
+            <x-dashboard.list-item :href="route('dashboard')" :icon="__('bx bx-grid-alt')" :title="__('Dashboard')"
+                :active="request()->routeIs('dashboard')" />
+
             {{-- SUPER --}}
             @if (Auth::user()->role === 'super')
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bxs-folder-open')" :title="__('Projects')"
@@ -21,6 +24,8 @@
                 </li>
             </x-dashboard.list-item-dropdown>
             @endif
+
+            {{-- FOR ALL --}}
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bx-cog')" :title="__('Settings')"
                 :active="request()->routeIs('settings.password.create')">
                 <li>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Setting\PasswordController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
@@ -22,9 +23,10 @@ Route::middleware(['auth'])->group(function () {
         'projects' => 'slug',
     ]);
 
-    Route::resource('blogs', BlogController::class)->parameters([
-        'blogs' => 'slug',
-    ]);
+    Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/blogs', [PostController::class, 'index'])->name('blogs.index');
+    Route::get('/blogs/{slug}', [PostController::class, 'show'])->name('blogs.show');
 
     // ------- SETTINGS ------ //
     Route::get('/settings/password/create', [PasswordController::class, 'create'])->name('settings.password.create');
