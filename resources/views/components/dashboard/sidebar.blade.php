@@ -17,6 +17,8 @@
 
             {{-- SUPER --}}
             @if (Auth::user()->role === 'super')
+            <x-dashboard.list-item :href="route('blogs.index')" :icon="__('bx bx-message-rounded-dots')"
+                :title="__('Blogs')" :active="request()->routeIs('blogs.index')" />
             <x-dashboard.list-item-dropdown :href="null" :icon="__('bx bxs-folder-open')" :title="__('Projects')"
                 :active="request()->routeIs('projects.index')">
                 <li>
