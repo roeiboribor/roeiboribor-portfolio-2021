@@ -9,18 +9,7 @@
 
     <div class="container flex items-center justify-center pt-8 animate__animated animate__bounceInDown">
         <div class="dashboard-card w-6/12">
-            @if (count($posts) > 0)
 
-            @foreach ($posts as $post)
-            <div>
-                <h3>
-                    <a href="{{ route('blogs.show',$post->slug) }}">{{ $post->title }}</a>
-                </h3>
-                <p>{{ $post->summary }}</p>
-            </div>
-            @endforeach
-
-            @endif
         </div>
     </div>
 

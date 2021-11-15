@@ -9,11 +9,7 @@
 
     <div class="container flex items-center justify-center pt-8 animate__animated animate__bounceInDown">
         <div class="dashboard-card w-6/12">
-            @if ($post->featured_image)
-            {{-- <img src="{{ asset('/'.$post->featured_image) }}" /> --}}
-            @endif
-            <h3>{{ $post->title }}</h3>
-            {!! $post->body !!}
+
         </div>
     </div>
 
