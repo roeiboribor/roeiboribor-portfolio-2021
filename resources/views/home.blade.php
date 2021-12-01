@@ -69,7 +69,7 @@
                             <div class="line-dotted w-full"></div>
                             <p class="text-xl ml-8">{{ $loop->index+1 }}</p>
                         </div>
-                        <section class="{{ $section }} pt-16">
+                        <section class="{{ $section }} pt-16 px-4">
                             <x-dynamic-component :component="'portfolio.'.$section.'-section'" :projects="$projects" />
                         </section>
                     </div>
